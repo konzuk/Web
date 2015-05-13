@@ -1,0 +1,72 @@
+Framework Detail
+
+common.js
+
+    - Create Provider: commonConfig
+
+    *** Usage: app.config(['commonConfigProvider', function(cfg)]);
+    *** commonConfig can use to config events.
+
+    - Create Service: common
+        + Include: $q, $rootScope, $timeout, commonConfig, logger
+
+    *** common use when activateController with promises.
+    *** common include:  $timeout, $q , $broadcast, logger, activateController.
+
+logger.js
+
+    - Create Service: logger
+        + Include: $log
+
+    *** Usage:
+        + First Usage
+            (Must Include common)
+
+            var getLogFn = common.logger.getLogFn;
+
+            var log = getLogFn(controllerId);
+            log('Information');
+
+            var log = getLogFn(controllerId, 'error');
+            log('error');
+
+            var log = getLogFn(controllerId, 'success');
+            log('success');
+
+            var log = getLogFn(controllerId, 'warn');
+            log('Warning');
+
+            var log = getLogFn(controllerId, 'warning');
+            log('Warning');
+
+        + Second Usage
+            (Must include common)
+            common.logger.log(msg, errorData, controllerId, true);
+            common.logger.logError(msg, errorData, controllerId, true);
+            common.logger.logSuccess(msg, errorData, controllerId, true);
+            common.logger.logWarning(msg, errorData, controllerId, true);
+
+            or
+
+            (Must include logger)
+            logger.log(msg, errorData, controllerId, true);
+            logger.logError(msg, errorData, controllerId, true);
+            logger.logSuccess(msg, errorData, controllerId, true);
+            logger.logWarning(msg, errorData, controllerId, true);
+
+    *** logger user to log error using "toastr"
+    *** logger include : getLogFn , log, logError, logWarning
+
+spinner.js
+
+    - Create Service: spinner
+        + Include: common, commonConfig
+
+    *** Usage:
+            (Must include spinner)
+            spinner.spinnerHide();
+            spinner.spinnerShow();
+
+
+    *** spinner user to show spinner (ajax loading , Ajax is set up by shell.js)
+    *** spinner include : spinnerHide , spinnerShow
