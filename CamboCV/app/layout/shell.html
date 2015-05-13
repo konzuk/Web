@@ -1,0 +1,19 @@
+﻿<div ng-controller="shell">
+
+    <div>
+        <!--Collect the nav links, forms, and other content for toggling-->
+        <div class="nav nav-tabs">
+            <ul class="nav nav-tabs">
+                <li role="presentation" ng-repeat="nars in navBarLists" ng-class="{active : isActive(nars.href)}">
+                    <a ng-href="{{nars.href}}">{{ nars.text }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--/.navbar-collapse-->
+
+
+        <div ng-view=""></div>
+
+    </div>
+</div>
