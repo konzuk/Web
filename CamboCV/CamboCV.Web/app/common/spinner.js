@@ -8,7 +8,8 @@
         .factory('spinner', ['common', 'commonConfig', spinner]);
 
     function spinner(common, commonConfig) {
-        var service = {
+        var service;
+        service = {
             spinnerHide: spinnerHide,
             spinnerShow: spinnerShow
         };

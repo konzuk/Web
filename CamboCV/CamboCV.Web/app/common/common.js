@@ -28,16 +28,17 @@
         ['$q', '$rootScope', '$timeout', 'commonConfig', 'logger', common]);
 
     function common($q, $rootScope, $timeout, commonConfig, logger) {
-        
-        var service = {
+
+        var service;
+        service = {
             // common angular dependencies
             $broadcast: $broadcast,
             $q: $q,
             $timeout: $timeout,
             activateController: activateController,
             logger: logger
-            
-          
+
+
         };
 
         return service;
