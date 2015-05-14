@@ -1,6 +1,10 @@
 Framework Detail
 
+**********************************Common****************************************
+
 common.js
+
+    - Create Module: common
 
     - Create Provider: commonConfig
 
@@ -70,3 +74,67 @@ spinner.js
 
     *** spinner user to show spinner (ajax loading , Ajax is set up by shell.js)
     *** spinner include : spinnerHide , spinnerShow
+
+
+
+**********************************Application****************************************
+app.js
+
+
+    - Create Module: app ( this is the Application )
+        + Include: ngAnimate, ngRoute, ngSanitize, common, ui.bootstrap
+
+    - Create Handle routing errors and success events with routemediator
+
+config.exceptionHandler.js
+
+    - Include in index.html so that app level exceptions are handled.
+
+config.js
+
+    - This is a configuration of the application
+        + config toastr ( timeout, position)
+        + config keyCodes
+        + config Events
+        + config debugEnabled
+        + config commonConfigProvider
+        + init narBars
+
+data.js
+
+    - Create Service: data
+        + Include: $http, $cacheFactory, $q
+
+    *** Usage:
+        (Must include data)
+        data.get(WAController);
+        .
+        .
+        .
+
+directives.js
+
+    - This is where to set up directive
+
+routemediator.js
+
+    - This handle $routeChangeError and $routeChangeSuccess
+    - This also handle Title of the Application
+
+Layout: shell.js and shell.html
+
+    - This the Application Layout
+    - Controller: shell
+        + Set up NavBar
+        + Set Page Header and Footer
+        + Set up spinner with (isBusy Attribute)
+        .
+        .
+        .
+    - View: shell
+        + Set up NavBar
+        + Set Page Header and Footer
+        + Set up spinner with (isBusy Attribute)
+        .
+        .
+        .
