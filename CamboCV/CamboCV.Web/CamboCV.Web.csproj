@@ -86,11 +86,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CamboCVDB.mdf" />
+    <Content Include="App_Data\CamboCVDB_log.ldf">
+      <DependentUpon>CamboCVDB.mdf</DependentUpon>
+    </Content>
     <Content Include="content\font\fontawesome-webfont.eot" />
     <Content Include="content\font\fontawesome-webfont.ttf" />
     <Content Include="content\font\fontawesome-webfont.woff" />
     <Content Include="content\font\FontAwesome.otf" />
     <Content Include="content\toastr.less" />
+    <Content Include="docs\Module.txt" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="scripts\angular-sanitize.min.js.map" />
@@ -121,10 +126,6 @@
     <Content Include="app\module\home\home.html" />
     <Content Include="app\module\home\home.js" />
     <Content Include="app\routemediator.js" />
-    <Content Include="App_Data\CamboCVDB.mdf" />
-    <Content Include="App_Data\CamboCVDB_log.ldf">
-      <DependentUpon>CamboCVDB.mdf</DependentUpon>
-    </Content>
     <Content Include="content\bootstrap-responsive.css" />
     <Content Include="content\bootstrap-responsive.min.css" />
     <Content Include="content\bootstrap.css" />
@@ -144,7 +145,6 @@
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
     <Content Include="docs\Framework.txt" />
-    <Content Include="docs\Route.txt" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="scripts\angular-animate.js" />

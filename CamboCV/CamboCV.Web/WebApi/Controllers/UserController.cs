@@ -16,7 +16,7 @@ namespace CamboCV.Web.WebApi.Controllers
         {
             get
             {
-                return Context.UserTables;
+                return Context.Set<UserTable>();
             }
         }
 
@@ -32,7 +32,12 @@ namespace CamboCV.Web.WebApi.Controllers
         [Route("api/user/getUserNewUser")]
         public UserTable getUserNewUser()
         {
-            return new UserTable(){ContactName = "Test"};
+
+
+
+            var user2 = UserTables.AsStreaming();
+
+            return user2.FirstOrDefault();
         }
 
         public DatabaseContext Context

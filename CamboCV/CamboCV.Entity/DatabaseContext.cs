@@ -8,7 +8,7 @@ namespace CamboCV.Entity
     {
 
         public DatabaseContext()
-            : base("name = DatabaseContext")
+            : base("name = CamboCVDB")
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
             //this.Configuration.LazyLoadingEnabled = true;

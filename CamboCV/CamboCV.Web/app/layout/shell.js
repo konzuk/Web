@@ -1,23 +1,25 @@
 ﻿(function () {
-    'use strict';
+    "use strict";
 
-    var controllerId = 'shell';
-    angular.module('app').controller(controllerId,
-        ['$rootScope','$scope','$location','common', 'config', shell]);
+    var controllerId = "shell";
+    angular.module("app").controller(controllerId,
+        ["$rootScope","$scope","$location","common", "config", shell]);
 
     function shell($rootScope,$scope,$location,common, config) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
         $scope.navBarLists = config.navBars;
+        $scope.isBusy = false;
         $scope.isActive = function (route) {
-            return route === '#' + $location.path();
+            var path = "#" + $location.path();
+            return path.indexOf(route) === 0;
         };
 
         activate();
 
         function activate() {
             common.activateController([], controllerId)
-                 .then(function () { log('Activated Shell'); });
+                 .then(function () { log("Activated Shell"); });
         }
 
         $rootScope.$on(config.events.controllerActivateSuccess,
@@ -31,9 +33,6 @@
         $rootScope.$on(config.events.spinnerToggle,
             function (data) { toggleSpinner(data.show); }
         );
-
-       
-
 
     };
 })();

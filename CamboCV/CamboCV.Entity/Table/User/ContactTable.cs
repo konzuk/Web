@@ -11,7 +11,6 @@ namespace CamboCV.Entity.Table.User
         [Index("ContactCode_Index", 1, IsUnique = true), Required, MaxLength(200)]
         public string ContactCode { get; set; }
         public string ContactName { get; set; }
-        public string ContactNameInLatin { get; set; }
-        
+
     }
 }

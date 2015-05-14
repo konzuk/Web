@@ -1,16 +1,16 @@
 (function () {
-    'use strict';
+    "use strict";
 
     // Define the common module 
     // Contains services:
     //  - common
     //  - logger
     //  - spinner
-    var commonModule = angular.module('common', []);
+    var commonModule = angular.module("common", []);
 
     // Must configure the common service and set its 
     // events via the commonConfigProvider
-    commonModule.provider('commonConfig', function () {
+    commonModule.provider("commonConfig", function () {
         this.config = {
             // These are the properties we need to set
             //controllerActivateSuccessEvent: '',
@@ -24,8 +24,8 @@
         };
     });
 
-    commonModule.factory('common',
-        ['$q', '$rootScope', '$timeout', 'commonConfig', 'logger', common]);
+    commonModule.factory("common",
+        ["$q", "$rootScope", "$timeout", "commonConfig", "logger", common]);
 
     function common($q, $rootScope, $timeout, commonConfig, logger) {
 
