@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamboCV.Web", "CamboCV.Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamboCV.Entity", "CamboCV.Entity\CamboCV.Entity.csproj", "{4D342B87-E750-476A-B5D0-917F51895B8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamboCV.Translate", "CamboCV.Translate\CamboCV.Translate.csproj", "{68EF2742-49FB-4727-98F1-D36242CE901B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4D342B87-E750-476A-B5D0-917F51895B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D342B87-E750-476A-B5D0-917F51895B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D342B87-E750-476A-B5D0-917F51895B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EF2742-49FB-4727-98F1-D36242CE901B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EF2742-49FB-4727-98F1-D36242CE901B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EF2742-49FB-4727-98F1-D36242CE901B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EF2742-49FB-4727-98F1-D36242CE901B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
