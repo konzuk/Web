@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
@@ -29,15 +30,49 @@ namespace CamboCV.Web.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("api/user/getUserNewUser")]
-        public UserTable getUserNewUser()
+        [Route("api/user/Create/{n}")]
+        public int getUserNewUser(int n)
         {
 
+            for (int i = 0; i < n; i++)
+            {
+                var us = new UserTable();
 
+                us.ContactCode = "Test" + Guid.NewGuid();
+                us.ContactName = "Test" + i.ToString();
+                us.IsActive = false;
+                us.RegisterDateTime = DateTime.Today;
 
-            var user2 = UserTables.AsStreaming();
+                UserTables.Add(us);
+            }
 
-            return user2.FirstOrDefault();
+            Context.SaveChanges();
+
+            return UserTables.Count();
+        }
+
+        [HttpGet]
+        [Route("api/user/Count")]
+        public int CountUserNewUser()
+        {
+            return UserTables.Count();
+        }
+
+        [HttpGet]
+        [Route("api/user/RemoveAll")]
+        public int deleteUserNewUser()
+        {
+
+            UserTables.RemoveRange(UserTables);
+            Context.SaveChanges();
+            return UserTables.Count();
+        }
+
+        [HttpGet]
+        [Route("api/user/GetAll/{n}")]
+        public ICollection<UserTable> GetAll(int n)
+        {
+            return n ==0? UserTables.ToList(): UserTables.Take(n).ToList();
         }
 
         public DatabaseContext Context
@@ -45,55 +80,6 @@ namespace CamboCV.Web.WebApi.Controllers
             get { return _context; }
             set { _context = value; }
         }
-        [HttpGet]
        
-        public int AllUser(int arg1, int arg2)
-        {
-            return arg1 + arg2;
-        }
-        [HttpGet]
-        public int AllUser(int arg1)
-        {
-            return arg1;
-        }
-        [HttpGet]
-        public IQueryable<UserTable> AllUsers(double arg1)
-        {
-            return UserTables;
-        }
-
-        // GET api/user/5
-
-
-        public UserTable Get(Guid id)
-        {
-            if (id == Guid.Empty)
-            {
-                return new UserTable();
-            }
-            return UserTables.FirstOrDefault(s => s.ContactId == id);
-        }
-
-        // POST api/user
-        [HttpPost]
-        [Route("api/user/login")]
-        public void Post([FromBody] UserTable value)
-        {
-            UserTables.Add(value);
-            Context.SaveChanges();
-        }
-
-        // PUT api/user/5
-        public void Put(Guid id, UserTable value)
-        {
-        }
-
-        // DELETE api/user/5
-        public void Delete(Guid id)
-        {
-           var table = UserTables.FirstOrDefault(s => s.ContactId == id);
-           UserTables.Remove(table);
-            Context.SaveChanges();
-        }
     }
 }

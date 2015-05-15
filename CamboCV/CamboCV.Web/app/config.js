@@ -30,24 +30,60 @@
         spinnerToggle: 'spinner.toggle'
     };
 
+    var locales = {
+        langList: [
+                        {
+                            keyLang: 'km-KH',
+                            valuelang: 'ខ្មែរ'
+                        }, {
+                            keyLang: 'en-US',
+                            valuelang: 'English'
+                        }
+        ],
+        preferredLocale: 'en-US'
+    };
+
+
     var config = {
-        appErrorPrefix: '[KZ Error] ', 
+        appErrorPrefix: '[KZ Error] ',
         docTitle: 'KZ: ',
         events: events,
         keyCodes: keyCodes,
         version: '1.0.0',
+        locales: locales,
         navBars: []
     };
 
+    app.constant('DEBUG_MODE', /*DEBUG_MODE*/true /*DEBUG_MODE*/);
+
+
+
     app.value('config', config);
-    
-    app.config(['$logProvider', function ($logProvider) {
+
+    app.config(['$logProvider', 'DEBUG_MODE', function ($logProvider, DEBUG_MODE) {
         // turn debugging off/on (no info or warn)
         if ($logProvider.debugEnabled) {
-            $logProvider.debugEnabled(true);
+            $logProvider.debugEnabled(DEBUG_MODE);
         }
     }]);
-    
+
+    app.config(['$translateProvider', 'DEBUG_MODE', function ($translateProvider) {
+
+        // Tell the module what language to use by default
+        $translateProvider.preferredLanguage(locales.preferredLocale);
+
+        // Tell the module to store the language in the cookies
+        $translateProvider.useCookieStorage();
+
+        
+        // Tell the module to use a key 'lang' in the storage instead of default key
+        $translateProvider.storageKey('lang');
+
+
+    }]);
+
+
+
     //#region Configure the common services via commonConfig
     app.config(['commonConfigProvider', function (cfg) {
         cfg.config.controllerActivateSuccessEvent = config.events.controllerActivateSuccess;
@@ -55,5 +91,5 @@
     }]);
     //#endregion
 
-  
+
 })();

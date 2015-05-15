@@ -6,6 +6,8 @@
         'ngAnimate',        // animations
         'ngRoute',          // routing
         'ngSanitize',       // sanitizes html bindings (ex: sidebar.js)
+        'ngCookies',        // Cookie
+        'pascalprecht.translate', //Translate
 
         //// Custom modules 
         'common',           // common functions, logger, spinner

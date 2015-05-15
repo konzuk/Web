@@ -86,10 +86,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CamboCVDB.mdf" />
-    <Content Include="App_Data\CamboCVDB_log.ldf">
-      <DependentUpon>CamboCVDB.mdf</DependentUpon>
-    </Content>
     <Content Include="content\font\fontawesome-webfont.eot" />
     <Content Include="content\font\fontawesome-webfont.ttf" />
     <Content Include="content\font\fontawesome-webfont.woff" />
@@ -97,12 +93,30 @@
     <Content Include="content\toastr.less" />
     <Content Include="docs\Module.txt" />
     <Content Include="scripts\angular-animate.min.js.map" />
+    <Content Include="scripts\angular-cookies.js" />
+    <Content Include="scripts\angular-cookies.min.js" />
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="scripts\angular-sanitize.min.js.map" />
+    <Content Include="scripts\angular-translate-handler-log.js" />
+    <Content Include="scripts\angular-translate-handler-log.min.js" />
+    <Content Include="scripts\angular-translate-loader-static-files.js" />
+    <Content Include="scripts\angular-translate-loader-static-files.min.js" />
+    <Content Include="scripts\angular-translate-loader-url.js" />
+    <Content Include="scripts\angular-translate-loader-url.min.js" />
+    <Content Include="scripts\angular-translate-storage-cookie.js" />
+    <Content Include="scripts\angular-translate-storage-cookie.min.js" />
+    <Content Include="scripts\angular-translate-storage-local.js" />
+    <Content Include="scripts\angular-translate-storage-local.min.js" />
+    <Content Include="scripts\angular-translate.js" />
+    <Content Include="scripts\angular-translate.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\jquery-2.0.3.min.map" />
     <Content Include="scripts\toastr.min.js.map" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\cambocv - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\cambocv - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
+    <Content Include="scripts\angular-cookies.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,15 +197,21 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebApi\App_Start\WebApiConfig.cs" />
+    <Compile Include="WebApi\Controllers\ShellController.cs" />
     <Compile Include="WebApi\Controllers\UserController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="WebApi\Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CamboCV.Entity\CamboCV.Entity.csproj">
       <Project>{4d342b87-e750-476a-b5d0-917f51895b8e}</Project>
       <Name>CamboCV.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CamboCV.Translate\CamboCV.Translate.csproj">
+      <Project>{68ef2742-49fb-4727-98f1-d36242ce901b}</Project>
+      <Name>CamboCV.Translate</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
