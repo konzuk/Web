@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutUs" xml:space="preserve">
+  <data name="AboutPage" xml:space="preserve">
     <value>About</value>
   </data>
   <data name="HomePage" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="This_is_Home_Page" xml:space="preserve">
+    <value>This is Home Page</value>
   </data>
 </root>

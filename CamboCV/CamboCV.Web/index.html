@@ -10,7 +10,7 @@
         }
     </style>
 
-    <title ng-bind="title"></title>
+    <title>{{title | translate }}</title>
 
     <meta charset="utf-8" />
     <meta name="description" content="" />
@@ -57,8 +57,7 @@
         <script src="scripts/angular-translate-storage-cookie.js"></script>
         <script src="scripts/angular-translate-storage-local.js"></script>
         <script src="scripts/angular-translate-handler-log.js"></script>
-        <script src="scripts/angular-translate-loader-static-files.js"></script>
-        <script src="scripts/angular-translate-loader-url.js"></script>
+        <script src="scripts/angular-translate-loader-partial.js"></script>
         <script src="scripts/bootstrap.js"></script>
         <script src="scripts/toastr.js"></script>
         <script src="scripts/moment.js"></script>
@@ -71,6 +70,7 @@
 
         <!-- Bootstrapping -->
         <script src="app/app.js"></script>
+        <script src="app/data.js"></script>
         <script src="app/config.js"></script>
         <script src="app/config.exceptionHandler.js"></script>
 
@@ -81,7 +81,6 @@
 
         <!-- app Services -->
         <script src="app/directives.js"></script>
-        <script src="app/data.js"></script>
         <script src="app/routemediator.js"></script>
 
         <!-- Module -->

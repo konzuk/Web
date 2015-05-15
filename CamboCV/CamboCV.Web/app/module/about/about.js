@@ -13,10 +13,10 @@
       function ($routeProvider) {
           $routeProvider.
           when('/about', {
-              title: 'About',
+              title: 'AboutPage',
               templateUrl: 'app/module/about/about.html',
               controller: 'aboutCon',
-              tab: "about"
+             
           })
             .otherwise({
                 redirectTo: '/home'
@@ -28,7 +28,7 @@
       function (config) {
           config.navBars.push({
               href: "#/about",
-              text: "About",
+              text: "AboutPage"
           });
       }
     ]);
@@ -39,7 +39,6 @@
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
-        $scope.title = "About";
         $scope.message = "This is About Page";
 
         activate();

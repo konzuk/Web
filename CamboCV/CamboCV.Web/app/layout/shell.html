@@ -1,11 +1,19 @@
 ﻿<div ng-controller="shell">
 
     <div>
+
+        <p ng-repeat="lang in langList">
+            | <a  ng-click="setLang(lang)" >{{lang.valuelang}}</a>
+        </p>
+
+        <br/>
+
+        <br/>
         <!--Collect the nav links, forms, and other content for toggling-->
         <div class="nav nav-tabs">
             <ul class="nav nav-tabs">
                 <li role="presentation" ng-repeat="nars in navBarLists" ng-class="{active : isActive(nars.href)}">
-                    <a ng-href="{{nars.href}}">{{ nars.text }}
+                    <a ng-href="{{nars.href}}">{{ nars.text | translate }}
                     </a>
                 </li>
             </ul>

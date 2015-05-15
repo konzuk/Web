@@ -18603,7 +18603,9 @@ var DATE_FORMATS_SPLIT = /((?:[^yMdHhmsaZEwG']+)|(?:'(?:[^']|'')*')|(?:E+|y+|M+|
  *   `format` string can also be one of the following predefined
  *   {@link guide/i18n localizable formats}:
  *
- *   * `'medium'`: equivalent to `'MMM d, y h:mm:ss a'` for en_US locale
+ *   * `'medium'`: equivalent to `'MMM d, y h:mm:ss a'` for 
+ * 
+ *  locale
  *     (e.g. Sep 3, 2010 12:05:08 PM)
  *   * `'short'`: equivalent to `'M/d/yy h:mm a'` for en_US  locale (e.g. 9/3/10 12:05 PM)
  *   * `'fullDate'`: equivalent to `'EEEE, MMMM d, y'` for en_US  locale

@@ -29,7 +29,9 @@ namespace CamboCV.Translate {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-       
+        internal Lang() {
+        }
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -61,9 +63,9 @@ namespace CamboCV.Translate {
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
-        public static string AboutUs {
+        public static string AboutPage {
             get {
-                return ResourceManager.GetString("AboutUs", resourceCulture);
+                return ResourceManager.GetString("AboutPage", resourceCulture);
             }
         }
         
@@ -73,6 +75,15 @@ namespace CamboCV.Translate {
         public static string HomePage {
             get {
                 return ResourceManager.GetString("HomePage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is Home Page.
+        /// </summary>
+        public static string This_is_Home_Page {
+            get {
+                return ResourceManager.GetString("This_is_Home_Page", resourceCulture);
             }
         }
     }

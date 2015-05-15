@@ -13,10 +13,10 @@
       function ($routeProvider) {
           $routeProvider.
           when("/home", {
-              title: "home",
+              title: "HomePage",
               templateUrl: "app/module/home/home.html",
               controller: "homeCon",
-              tab: "home"
+             
           })
             .otherwise({
                 redirectTo: "/home"
@@ -28,7 +28,7 @@
       function (config) {
           config.navBars.push({
               href: "#/home",
-              text: "Home",
+              text: "HomePage",
               level: 1
           });
       }
@@ -38,8 +38,8 @@
     function home($scope, common) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
-        $scope.title = "Home";
-        $scope.message = "This is Home Page";
+       
+        $scope.message = "This_is_Home_Page";
         activate();
         function activate() {
             common.activateController([], controllerId)

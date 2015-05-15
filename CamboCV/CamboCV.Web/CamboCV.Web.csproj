@@ -100,10 +100,8 @@
     <Content Include="scripts\angular-sanitize.min.js.map" />
     <Content Include="scripts\angular-translate-handler-log.js" />
     <Content Include="scripts\angular-translate-handler-log.min.js" />
-    <Content Include="scripts\angular-translate-loader-static-files.js" />
-    <Content Include="scripts\angular-translate-loader-static-files.min.js" />
-    <Content Include="scripts\angular-translate-loader-url.js" />
-    <Content Include="scripts\angular-translate-loader-url.min.js" />
+    <Content Include="scripts\angular-translate-loader-partial.js" />
+    <Content Include="scripts\angular-translate-loader-partial.min.js" />
     <Content Include="scripts\angular-translate-storage-cookie.js" />
     <Content Include="scripts\angular-translate-storage-cookie.min.js" />
     <Content Include="scripts\angular-translate-storage-local.js" />

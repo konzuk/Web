@@ -46,7 +46,7 @@
 
     var config = {
         appErrorPrefix: '[KZ Error] ',
-        docTitle: 'KZ: ',
+        docTitle: '',
         events: events,
         keyCodes: keyCodes,
         version: '1.0.0',
@@ -67,8 +67,12 @@
         }
     }]);
 
-    app.config(['$translateProvider', 'DEBUG_MODE', function ($translateProvider) {
+    app.config(['$translateProvider','$provide', '$translatePartialLoaderProvider', function ($translateProvider,$provide, $translatePartialLoaderProvider) {
 
+
+        $translateProvider.useLoader('$translatePartialLoader', {
+            urlTemplate: 'api/{part}/{lang}'
+        });
         // Tell the module what language to use by default
         $translateProvider.preferredLanguage(locales.preferredLocale);
 
@@ -78,7 +82,7 @@
         
         // Tell the module to use a key 'lang' in the storage instead of default key
         $translateProvider.storageKey('lang');
-
+        $translatePartialLoaderProvider.addPart('getLang');
 
     }]);
 
