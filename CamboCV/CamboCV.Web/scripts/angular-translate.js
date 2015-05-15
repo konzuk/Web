@@ -369,7 +369,7 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
 
   // tries to determine the browsers language
   var getFirstBrowserLanguage = function () {
-
+      
     // internal purpose only
     if (angular.isFunction(pascalprechtTranslateOverrider.getLocale)) {
       return pascalprechtTranslateOverrider.getLocale();

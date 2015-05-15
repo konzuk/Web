@@ -2,10 +2,30 @@
     "use strict";
 
     var controllerId = "shell";
-    angular.module("app").controller(controllerId,
-        ["$rootScope", "$scope", "$location", "$translate", "$translateProvider", "common", "config", shell]);
 
-    function shell($rootScope, $scope, $location, $translate, $translateProvider, common, config) {
+    //angular.module("app").run(['$translateProvider', 'data', 'config', function ($translateProvider, data, config) {
+
+    //    var locales = config.locales.langList;
+
+    //    if (!locales || locales.length === 0) {
+
+    //    }
+
+    //    locales.forEach(function (locale) {
+    //        data.get('getLang/' + locale.keyLang).then(function (result) {
+    //            $translateProvider.translations(locale.keyLang, result.data);
+    //        });
+    //    });
+
+
+    //}]);
+
+    angular.module("app").controller(controllerId,
+        ["$rootScope", "$scope", "$location", "$translate", "common", "config", shell]);
+
+    
+
+    function shell($rootScope, $scope, $location, $translate, common, config) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
        
@@ -27,27 +47,12 @@
         activate();
 
         function activate() {
-            common.activateController([getLang()], controllerId)
+            common.activateController([], controllerId)
                  .then(function () { log("Activated Shell"); });
         }
 
         
-        function getLang() {
-
-            var locales = config.locales.langList;
-            
-            if (!locales || locales.length === 0) {
-                return false;
-            }
-
-            locales.forEach(function (locale) {
-                data.get('getLang/' + locale.keyLang).then(function (result) {
-                    $translateProvider.translations(locale.keyLang, result.data);
-                });
-            });
-
-            return true;
-        }
+        
 
         $rootScope.$on(config.events.controllerActivateSuccess,
             function (data) {

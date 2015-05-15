@@ -40,12 +40,7 @@
                     return results;
                 });
             };
-            obj.get = function (q, id) {
-
-                return $http.get(serviceBase + q + "/" + id).then(function (results) {
-                    return results;
-                });
-            };
+           
             obj.post = function (q, object) {
                 return $http.post(serviceBase + q, object).then(function (results) {
                     return results;
