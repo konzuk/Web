@@ -15,7 +15,7 @@
           when("/home", {
               title: "HomePage",
               templateUrl: "app/module/home/home.html",
-              controller: "homeCon",
+              controller: "homeCon"
              
           })
             .otherwise({

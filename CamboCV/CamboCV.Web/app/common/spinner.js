@@ -2,26 +2,52 @@
     'use strict';
 
     // Must configure the common service and set its 
-    // events via the commonConfigProvider
-
+    
     angular.module('common')
-        .factory('spinner', ['common', 'commonConfig', spinner]);
+        .factory('spinner', ['common', 'config', spinner]);
 
-    function spinner(common, commonConfig) {
+    function spinner(common, config) {
         var service;
         service = {
-            spinnerHide: spinnerHide,
-            spinnerShow: spinnerShow
+            spinnerRouteChangeHide: spinnerRouteChangeHide,
+            spinnerRouteChangeShow: spinnerRouteChangeShow,
+            spinnerTranslateHide: spinnerTranslateHide,
+            spinnerTranslateShow: spinnerTranslateShow,
+            spinnerGetDataHide: spinnerGetDataHide,
+            spinnerGetDataShow: spinnerGetDataShow
         };
 
         return service;
 
-        function spinnerHide() { spinnerToggle(false); }
-
-        function spinnerShow() { spinnerToggle(true); }
-
-        function spinnerToggle(show) {
-            common.$broadcast(commonConfig.config.spinnerToggleEvent, { show: show });
+        function spinnerRouteChange(show) {
+            common.$broadcast(config.events.routeChangeEvent, { show: show });
         }
+
+        function spinnerTranslate(show) {
+            common.$broadcast(config.events.translateEvent, { show: show });
+        }
+
+        function spinnerGetData(show) {
+            common.$broadcast(config.events.gettingDataEvent, { show: show });
+        }
+
+
+        function spinnerRouteChangeHide() { spinnerRouteChange(false); }
+
+        function spinnerRouteChangeShow() { spinnerRouteChange(true); }
+
+
+        function spinnerTranslateHide() { spinnerTranslate(false); }
+
+        function spinnerTranslateShow() { spinnerTranslate(true); }
+
+
+        function spinnerGetDataHide() { spinnerGetData(false); }
+
+        function spinnerGetDataShow() { spinnerGetData(true); }
+
+        
+       
+       
     }
 })();

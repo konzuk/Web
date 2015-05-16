@@ -15,12 +15,9 @@
           when('/about', {
               title: 'AboutPage',
               templateUrl: 'app/module/about/about.html',
-              controller: 'aboutCon',
+              controller: 'aboutCon'
              
-          })
-            .otherwise({
-                redirectTo: '/home'
-            });
+          });
       }
     ]);
 

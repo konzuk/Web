@@ -2679,7 +2679,7 @@ function translateDirective($translate, $q, $interpolate, $compile, $parse, $roo
         // ensure translation will be looked up at least one
         if (iElement.text().length) {
           if (iAttr.translate) {
-            observeElementTranslation(iAttr.translate);
+            observeElementTranslation('');
           } else {
             observeElementTranslation('');
           }

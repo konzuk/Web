@@ -6,13 +6,9 @@ common.js
 
     - Create Module: common
 
-    - Create Provider: commonConfig
-
-    *** Usage: app.config(['commonConfigProvider', function(cfg)]);
-    *** commonConfig can use to config events.
 
     - Create Service: common
-        + Include: $q, $rootScope, $timeout, commonConfig, logger
+        + Include: $q, $rootScope, $timeout, config, logger
 
     *** common use when activateController with promises.
     *** common include:  $timeout, $q , $broadcast, logger, activateController.
@@ -64,7 +60,7 @@ logger.js
 spinner.js
 
     - Create Service: spinner
-        + Include: common, commonConfig
+        + Include: common, config
 
     *** Usage:
             (Must include spinner)
@@ -97,7 +93,6 @@ config.js
         + config keyCodes
         + config Events
         + config debugEnabled
-        + config commonConfigProvider
         + init narBars
 
 data.js
@@ -127,14 +122,14 @@ Layout: shell.js and shell.html
     - Controller: shell
         + Set up NavBar
         + Set Page Header and Footer
-        + Set up spinner with (isBusy Attribute)
+        + Set up spinner with (isRouteChanging Attribute)
         .
         .
         .
     - View: shell
         + Set up NavBar
         + Set Page Header and Footer
-        + Set up spinner with (isBusy Attribute)
+        + Set up spinner with (isRouteChanging Attribute)
         .
         .
         .

@@ -9,9 +9,9 @@
     // Point to the factory definition function.
     angular.module('app')
         .factory(serviceId,
-            ['$location', '$rootScope', 'config', 'logger', routemediator]);
+            ['$location', '$rootScope', 'config', 'logger','spinner', routemediator]);
 
-    function routemediator($location, $rootScope, config, logger) {
+    function routemediator($location, $rootScope, config, logger, spinner) {
         // Define the functions and properties to reveal.
         var handleRouteChangeError = false;
         var service = {
@@ -21,8 +21,9 @@
         return service;
         
         function setRoutingHandlers() {
-            updateDocTitle();
             handleRoutingErrors();
+            updateDocTitle();
+            handleRouteChangeStart();
         }
 
         function handleRoutingErrors() {
@@ -33,7 +34,16 @@
                     var msg = 'Error routing: ' + (current && current.name)
                         + '. ' + (rejection.msg || '');
                     logger.logWarning(msg, current, serviceId, true);
-                    $location.path('/');
+                    $location.path('/home');
+
+
+                });
+        }
+
+        function handleRouteChangeStart() {
+            $rootScope.$on('$routeChangeStart',
+                function () {
+                    spinner.spinnerRouteChangeShow();
                 });
         }
 
@@ -43,6 +53,7 @@
                     handleRouteChangeError = false;
                     var title = config.docTitle + ' ' + (current.title || '');
                     $rootScope.title = title;
+                    spinner.spinnerRouteChangeHide();
                 });
         }
     }

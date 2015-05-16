@@ -4,6 +4,29 @@
     var app = angular.module('app');
 
 
+   
+
+
+      app.directive("translate", ["config",
+
+        function (config) {
+
+            var directive = {
+                restrict: 'A',
+                link: function ($scope,element, attr) {
+                    $scope.$watch('langBind', function () {
+                        element.css("font-family", $scope.langBind);
+                    });
+                    
+                }
+            };
+            return directive;
+
+            
+        }]);
+
+
+
     app.directive('ccScrollToTop', ['$window',
         // Usage:
         // <span data-cc-scroll-to-top></span>

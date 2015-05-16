@@ -9,12 +9,14 @@
     var commonModule = angular.module("common", []);
 
     // Must configure the common service and set its 
-    // events via the commonConfigProvider
+  
+
+    commonModule.factory("common",
+        ["$q", "$rootScope", "$timeout", "config", "logger", common]);
+
     commonModule.provider("commonConfig", function () {
         this.config = {
-            // These are the properties we need to set
-            //controllerActivateSuccessEvent: '',
-            //spinnerToggleEvent: ''
+           
         };
 
         this.$get = function () {
@@ -24,10 +26,7 @@
         };
     });
 
-    commonModule.factory("common",
-        ["$q", "$rootScope", "$timeout", "commonConfig", "logger", common]);
-
-    function common($q, $rootScope, $timeout, commonConfig, logger) {
+    function common($q, $rootScope, $timeout, config, logger) {
 
         var service;
         service = {
@@ -46,12 +45,12 @@
         function activateController(promises, controllerId) {
             return $q.all(promises).then(function (eventArgs) {
                 var data = { controllerId: controllerId };
-                $broadcast(commonConfig.config.controllerActivateSuccessEvent, data);
+                $broadcast(config.events.controllerActivateEvent, data);
             });
         }
 
-        function $broadcast() {
-            return $rootScope.$broadcast.apply($rootScope, arguments);
+        function $broadcast(event, data) {
+            return $rootScope.$emit(event,data);
         }
 
         

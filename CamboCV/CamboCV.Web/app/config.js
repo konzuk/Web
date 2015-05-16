@@ -26,19 +26,29 @@
     };
 
     var events = {
-        controllerActivateSuccess: 'controller.activateSuccess',
-        spinnerToggle: 'spinner.toggle'
+        controllerActivateEvent: 'controller.activateSuccess',
+        routeChangeEvent: 'route.change',
+        gettingDataEvent: 'data.getting',
+        translateEvent: 'translate.translating'
     };
 
     var locales = {
         langList: [
-                        {
-                            keyLang: 'km-KH',
-                            valuelang: 'ខ្មែរ'
-                        }, {
-                            keyLang: 'en-US',
-                            valuelang: 'English'
-                        }
+        {
+            keyLang: 'km-KH',
+            valuelang: 'ខ្មែរ',
+            fontfamily: {
+                headerFont: "Khmer OS Muol Light",
+                itemFont: "Khmer OS Muol Light",
+            }
+        }, {
+            keyLang: 'en-US',
+            valuelang: 'English',
+            fontfamily: {
+                headerFont: "Buxton Sketch",
+                itemFont: "Buxton Sketch",
+                }
+            }
         ],
         preferredLocale: 'en-US'
     };
@@ -51,6 +61,7 @@
         keyCodes: keyCodes,
         version: '1.0.0',
         locales: locales,
+        langCookie: 'langCookie',
         navBars: []
     };
 
@@ -79,21 +90,17 @@
         // Tell the module to store the language in the cookies
         $translateProvider.useCookieStorage();
 
-        
         // Tell the module to use a key 'lang' in the storage instead of default key
-        $translateProvider.storageKey('lang');
+        $translateProvider.storageKey(config.langCookie);
         $translatePartialLoaderProvider.addPart('getLang');
 
+
     }]);
 
 
 
-    //#region Configure the common services via commonConfig
-    app.config(['commonConfigProvider', function (cfg) {
-        cfg.config.controllerActivateSuccessEvent = config.events.controllerActivateSuccess;
-        cfg.config.spinnerToggleEvent = config.events.spinnerToggle;
-    }]);
-    //#endregion
+    
+
 
 
 })();
