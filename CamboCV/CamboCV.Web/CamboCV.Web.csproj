@@ -87,6 +87,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\layout\Copy of shell.html" />
     <Content Include="content\font\fontawesome-webfont.eot" />
     <Content Include="content\font\fontawesome-webfont.ttf" />
     <Content Include="content\font\fontawesome-webfont.woff" />
