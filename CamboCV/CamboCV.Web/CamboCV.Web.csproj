@@ -87,7 +87,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\layout\Copy of shell.html" />
     <Content Include="content\font\fontawesome-webfont.eot" />
     <Content Include="content\font\fontawesome-webfont.ttf" />
     <Content Include="content\font\fontawesome-webfont.woff" />
@@ -117,15 +116,6 @@
     <None Include="Properties\PublishProfiles\cambocv - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="scripts\angular-cookies.min.js.map" />
-    <Content Include="Test\fonts\.DS_Store" />
-    <Content Include="Test\fonts\codropsicons\codropsicons.eot" />
-    <Content Include="Test\fonts\codropsicons\codropsicons.ttf" />
-    <Content Include="Test\fonts\codropsicons\codropsicons.woff" />
-    <Content Include="Test\fonts\font-awesome-4.2.0\.DS_Store" />
-    <Content Include="Test\fonts\font-awesome-4.2.0\fonts\fontawesome-webfont.eot" />
-    <Content Include="Test\fonts\font-awesome-4.2.0\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Test\fonts\font-awesome-4.2.0\fonts\fontawesome-webfont.woff" />
-    <Content Include="Test\img\.DS_Store" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -198,31 +188,6 @@
     <Content Include="scripts\ui-bootstrap-0.7.0.min.js" />
     <Content Include="scripts\ui-bootstrap-tpls-0.7.0.js" />
     <Content Include="scripts\ui-bootstrap-tpls-0.7.0.min.js" />
-    <Content Include="Test\css\button.css" />
-    <Content Include="Test\css\circlemenu.css" />
-    <Content Include="Test\css\collapseexpand.css" />
-    <Content Include="Test\css\demo.css" />
-    <Content Include="Test\css\drag.css" />
-    <Content Include="Test\css\dropdown.css" />
-    <Content Include="Test\css\hamburger.css" />
-    <Content Include="Test\css\inputs.css" />
-    <Content Include="Test\css\normalize.css" />
-    <Content Include="Test\css\pullupmenu.css" />
-    <Content Include="Test\css\sidebar.css" />
-    <Content Include="Test\fonts\codropsicons\codropsicons.svg" />
-    <Content Include="Test\fonts\codropsicons\license.txt" />
-    <Content Include="Test\fonts\font-awesome-4.2.0\css\font-awesome.min.css" />
-    <Content Include="Test\fonts\font-awesome-4.2.0\fonts\fontawesome-webfont.svg" />
-    <Content Include="Test\img\related\AnimatedCheckboxes.png" />
-    <Content Include="Test\img\related\DragDropInteractions.png" />
-    <Content Include="Test\img\related\SelectInspiration.png" />
-    <Content Include="Test\img\related\ShapeHoverEffect.png" />
-    <Content Include="Test\img\related\WobblySlideshowEffect.png" />
-    <Content Include="Test\index.html" />
-    <Content Include="Test\js\classie.js" />
-    <Content Include="Test\js\draggabilly.pkgd.min.js" />
-    <Content Include="Test\js\modernizr.custom.js" />
-    <Content Include="Test\js\snap.svg-min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
