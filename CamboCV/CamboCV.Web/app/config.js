@@ -92,6 +92,7 @@
 
         // Tell the module to use a key 'lang' in the storage instead of default key
         $translateProvider.storageKey(config.langCookie);
+        $translateProvider.useSanitizeValueStrategy('escaped');
         $translatePartialLoaderProvider.addPart('getLang');
 
 
