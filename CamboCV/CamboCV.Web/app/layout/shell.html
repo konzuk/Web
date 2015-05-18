@@ -9,7 +9,7 @@
 
 
             <p>
-                <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}      </a>
+                <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</a>
             </p>
 
             <br />
@@ -28,7 +28,13 @@
             <!--/.navbar-collapse-->
 
 
+            <div>
+                <h1 ng-show="isRouteChanging || isDataGetting|| isTranslating">busy....</h1>
+            </div>
 
+            <div ng-hide="isRouteChanging || isDataGetting|| isTranslating">
+                <div ng-view=""></div>
+            </div>
 
 
         </div>
