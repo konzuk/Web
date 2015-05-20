@@ -35,7 +35,7 @@
                 });
             };
             obj.get = function (q) {
-
+               
                 return $http.get(serviceBase + q).then(function (results) {
                     return results;
                 });

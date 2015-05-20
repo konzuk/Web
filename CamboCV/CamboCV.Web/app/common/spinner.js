@@ -8,13 +8,15 @@
 
     function spinner(common, config) {
         var service;
+
+        
         service = {
             spinnerRouteChangeHide: spinnerRouteChangeHide,
             spinnerRouteChangeShow: spinnerRouteChangeShow,
             spinnerTranslateHide: spinnerTranslateHide,
             spinnerTranslateShow: spinnerTranslateShow,
             spinnerGetDataHide: spinnerGetDataHide,
-            spinnerGetDataShow: spinnerGetDataShow
+            spinnerGetDataShow: spinnerGetDataShow,
         };
 
         return service;
@@ -46,8 +48,8 @@
 
         function spinnerGetDataShow() { spinnerGetData(true); }
 
-        
-       
-       
+
+
+
     }
 })();

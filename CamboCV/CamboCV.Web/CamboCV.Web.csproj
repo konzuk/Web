@@ -87,11 +87,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\font\fontawesome-webfont.eot" />
-    <Content Include="content\font\fontawesome-webfont.ttf" />
-    <Content Include="content\font\fontawesome-webfont.woff" />
-    <Content Include="content\font\FontAwesome.otf" />
-    <Content Include="content\toastr.less" />
+    <Content Include="content\toastr.min.css" />
     <Content Include="docs\Module.txt" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular-cookies.js" />
@@ -109,13 +105,15 @@
     <Content Include="scripts\angular-translate.js" />
     <Content Include="scripts\angular-translate.min.js" />
     <Content Include="scripts\angular.min.js.map" />
-    <Content Include="scripts\jquery-2.0.3.min.map" />
+    <Content Include="scripts\jquery.min.js" />
     <Content Include="scripts\toastr.min.js.map" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\cambocv - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\cambocv - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="scripts\angular-cookies.min.js.map" />
+    <Content Include="scripts\toastr.js.map" />
+    <Content Include="scripts\jquery.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,24 +137,6 @@
     <Content Include="app\module\home\home.html" />
     <Content Include="app\module\home\home.js" />
     <Content Include="app\routemediator.js" />
-    <Content Include="content\bootstrap-responsive.css" />
-    <Content Include="content\bootstrap-responsive.min.css" />
-    <Content Include="content\bootstrap.css" />
-    <Content Include="content\bootstrap.min.css" />
-    <Content Include="content\customtheme.css" />
-    <Content Include="content\font-awesome-ie7.css" />
-    <Content Include="content\font-awesome-ie7.min.css" />
-    <Content Include="content\font-awesome.css" />
-    <Content Include="content\font-awesome.min.css" />
-    <Content Include="content\font\fontawesome-webfont.svg" />
-    <Content Include="content\ie10mobile.css" />
-    <Content Include="content\images\AngularJS-small.png" />
-    <Content Include="content\images\glyphicons-halflings-white.png" />
-    <Content Include="content\images\glyphicons-halflings.png" />
-    <Content Include="content\images\icon.png" />
-    <Content Include="content\styles.css" />
-    <Content Include="content\toastr.css" />
-    <Content Include="content\toastr.min.css" />
     <Content Include="docs\Framework.txt" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
@@ -169,25 +149,7 @@
     <Content Include="scripts\angular-sanitize.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
-    <Content Include="scripts\bootstrap.js" />
-    <Content Include="scripts\bootstrap.min.js" />
-    <None Include="scripts\jquery-2.0.3.intellisense.js" />
-    <Content Include="scripts\jquery-2.0.3.js" />
-    <Content Include="scripts\jquery-2.0.3.min.js" />
-    <Content Include="scripts\moment-with-langs.js" />
-    <Content Include="scripts\moment-with-langs.min.js" />
-    <Content Include="scripts\moment.js" />
-    <Content Include="scripts\moment.min.js" />
-    <Content Include="scripts\q.js" />
-    <Content Include="scripts\q.min.js" />
-    <Content Include="scripts\spin.js" />
-    <Content Include="scripts\spin.min.js" />
-    <Content Include="scripts\toastr.js" />
     <Content Include="scripts\toastr.min.js" />
-    <Content Include="scripts\ui-bootstrap-0.7.0.js" />
-    <Content Include="scripts\ui-bootstrap-0.7.0.min.js" />
-    <Content Include="scripts\ui-bootstrap-tpls-0.7.0.js" />
-    <Content Include="scripts\ui-bootstrap-tpls-0.7.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

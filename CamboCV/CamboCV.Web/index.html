@@ -23,76 +23,60 @@
     <meta name="author" content="" />
 
 
-    <script>
-        // Must be first. IE10 mobile viewport fix
-        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
-            var msViewportStyle = document.createElement("style");
-            var mq = "@-ms-viewport{width:auto!important}";
-            msViewportStyle.appendChild(document.createTextNode(mq));
-            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-        }
-    </script>
-   
-    
-   
+    <link rel="stylesheet" type="text/css" href="content/toastr.min.css"/>
 
-    <link href="content/ie10mobile.css" rel="stylesheet" />
-    <link href="content/bootstrap.min.css" rel="stylesheet" />
-    <link href="content/font-awesome.min.css" rel="stylesheet" />
-    <link href="content/toastr.css" rel="stylesheet" />
-    <link href="content/bootstrap-responsive.min.css" rel="stylesheet" />
-
+    <!--template-->
 
 
 
     
 </head>
-    <body>
-        <div>
-        <div ng-include="'/app/layout/shell.html'"></div>
-    </div>
-        
-        <!-- Vendor Scripts -->
-        <script src="scripts/jquery-2.0.3.js"></script>
-        <script src="scripts/angular.js"></script>
-        <script src="scripts/angular-animate.js"></script>
-        <script src="scripts/angular-route.js"></script>
-        <script src="scripts/angular-sanitize.js"></script>
-        <script src="scripts/angular-cookies.js"></script>
-        <script src="scripts/angular-translate.min.js"></script>
-        <script src="scripts/angular-translate-storage-cookie.js"></script>
-        <script src="scripts/angular-translate-storage-local.js"></script>
-        <script src="scripts/angular-translate-handler-log.js"></script>
-        <script src="scripts/angular-translate-loader-partial.js"></script>
-        <script src="scripts/bootstrap.js"></script>
-        <script src="scripts/toastr.js"></script>
-        <script src="scripts/moment.js"></script>
-        <script src="scripts/ui-bootstrap-tpls-0.7.0.js"></script>
-        <script src="scripts/spin.js"></script>
-        <script src="scripts/q.js"></script>
+<body>
+   
+<div>
+    <div ng-include="'/app/layout/shell.html'"></div>
+</div>
 
 
 
 
-        <!-- Bootstrapping -->
-        <script src="app/app.js"></script>
-        <script src="app/config.js"></script>
-        <script src="app/config.exceptionHandler.js"></script>
 
-        <!-- common Modules -->
-        <script src="app/common/common.js"></script>
-        <script src="app/common/logger.js"></script>
-        <script src="app/common/spinner.js"></script>
+<!-- Vendor Scripts -->
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/angular.js"></script>
+<script src="scripts/angular-animate.js"></script>
+<script src="scripts/angular-route.js"></script>
+<script src="scripts/angular-sanitize.js"></script>
+<script src="scripts/angular-cookies.js"></script>
+<script src="scripts/angular-translate.min.js"></script>
+<script src="scripts/angular-translate-storage-cookie.js"></script>
+<script src="scripts/angular-translate-storage-local.js"></script>
+<script src="scripts/angular-translate-handler-log.js"></script>
+<script src="scripts/angular-translate-loader-partial.js"></script>
+<script src="scripts/toastr.min.js"></script>
 
-    <!-- app Services -->
-        <script src="app/data.js"></script>
-        <script src="app/directives.js"></script>
-        <script src="app/routemediator.js"></script>
+<!--template-->
 
-        <!-- Module -->
-        <script src="app/layout/shell.js"></script>
-        <script src="app/module/home/home.js"></script>
-        <script src="app/module/about/about.js"></script>
 
-    </body>
+<!-- Bootstrapping -->
+<script src="app/app.js"></script>
+<script src="app/config.js"></script>
+<script src="app/config.exceptionHandler.js"></script>
+
+<!-- common Modules -->
+<script src="app/common/common.js"></script>
+<script src="app/common/logger.js"></script>
+<script src="app/common/spinner.js"></script>
+
+<!-- app Services -->
+<script src="app/data.js"></script>
+<script src="app/directives.js"></script>
+<script src="app/routemediator.js"></script>
+
+<!-- Module -->
+<script src="app/layout/shell.js"></script>
+<script src="app/module/home/home.js"></script>
+<script src="app/module/about/about.js"></script>
+
+</body>
 </html>

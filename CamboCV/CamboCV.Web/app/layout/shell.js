@@ -7,27 +7,15 @@
     angular.module("app").controller(controllerId,
         ["$rootScope", "$scope", "$location", "$translate", "common", "config", "spinner", shell]);
 
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1);
-            if (c.indexOf(name) == 0) {
-
-                var result = c.substring(name.length, c.length);
-                var res = result.split("%22").join("");
-
-                return res;
-            }
-        }
-        return "";
-    }
-
     function shell($rootScope, $scope, $location, $translate, common, config,spinner) {
+        
+       
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
+
+        
+        
         $scope.test = 'Test';
        
         $scope.navBarLists = config.navBars;
@@ -91,12 +79,14 @@
         $rootScope.$on(config.events.routeChangeEvent,
             function(event, args) {
                 $scope.isRouteChanging = args.show;
+
             }
         );
 
         $rootScope.$on(config.events.translateEvent,
            function (event, args) {
                $scope.isTranslating = args.show;
+              
            }
        );
 

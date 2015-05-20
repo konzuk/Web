@@ -2,11 +2,8 @@
 
     <div>
 
-        <div ng-show="isTranslating || isFirstLoad">
-            <h1>This is page Loading</h1>
-        </div>
+        
         <div ng-hide="isTranslating || isFirstLoad">
-
 
             <p>
                 <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</a>
@@ -28,8 +25,8 @@
             <!--/.navbar-collapse-->
 
 
-            <div>
-                <h1 ng-show="isRouteChanging || isDataGetting|| isTranslating">busy....</h1>
+            <div ng-show="isRouteChanging || isDataGetting|| isTranslating">
+                <h1>busy....</h1>
             </div>
 
             <div ng-hide="isRouteChanging || isDataGetting|| isTranslating">
