@@ -87,7 +87,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\toastr.min.css" />
+    <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.css" />
+    <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.min.css" />
+    <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="content\normalize.css" />
+    <Content Include="content\ns-default.css" />
+    <Content Include="content\ns-style-attached.css" />
     <Content Include="docs\Module.txt" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular-cookies.js" />
@@ -105,14 +110,20 @@
     <Content Include="scripts\angular-translate.js" />
     <Content Include="scripts\angular-translate.min.js" />
     <Content Include="scripts\angular.min.js.map" />
+    <Content Include="scripts\classie.js" />
     <Content Include="scripts\jquery.min.js" />
-    <Content Include="scripts\toastr.min.js.map" />
+    <Content Include="scripts\modernizr.custom.js" />
+    <Content Include="scripts\notificationFx.js" />
     <Content Include="packages.config" />
+    <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="content\fonts\font-awesome-4.3.0\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\cambocv - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\cambocv - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <Content Include="scripts\angular-cookies.min.js.map" />
-    <Content Include="scripts\toastr.js.map" />
     <Content Include="scripts\jquery.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -149,7 +160,6 @@
     <Content Include="scripts\angular-sanitize.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
-    <Content Include="scripts\toastr.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

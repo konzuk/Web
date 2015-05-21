@@ -55,15 +55,57 @@
             write(source, message, data);
             if (showToast) {
                 if (toastType === 'error') {
-                    toastr.error(message);
+                    logShowError(message);
                 } else if (toastType === 'warning') {
-                    toastr.warning(message);
+                    logShowWarning(message);
                 } else if (toastType === 'success') {
-                    toastr.success(message);
+                    logShowNotice(message);
                 } else {
-                    toastr.info(message);
+                    logShowNotice(message);
                 }
             }
+        }
+
+        function logShowNotice(message) {
+            var notification = new NotificationFx({
+                message: '<span class="icon fa fa-3x fa-info-circle"></span><p>' + message + '</p>',
+                layout: 'attached',
+                effect: 'bouncyflip',
+                type: 'notice', // notice, warning or error
+                ttl: 2500,
+                onClose: function () {
+                    
+                }
+            });
+            notification.show();
+        }
+
+        function logShowWarning(message) {
+            var notification = new NotificationFx({
+                message: '<span class="icon fa fa-2x fa-warning"></span><p>' + message + '</p>',
+                layout: 'attached',
+                effect: 'bouncyflip',
+                type: 'notice', // notice, warning or error
+                ttl: 2500,
+                onClose: function () {
+
+                }
+            });
+            notification.show();
+        }
+
+        function logShowError(message) {
+            var notification = new NotificationFx({
+                message: '<span class="icon fa fa-2x fa-times-circle"></span><p>' + message + '</p>',
+                layout: 'attached',
+                effect: 'bouncyflip',
+                type: 'notice', // notice, warning or error
+                ttl: 2500,
+                onClose: function () {
+
+                }
+            });
+            notification.show();
         }
     }
 })();
