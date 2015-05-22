@@ -87,12 +87,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\component.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="content\fxfullwidth.css" />
     <Content Include="content\normalize.css" />
     <Content Include="content\ns-default.css" />
     <Content Include="content\ns-style-attached.css" />
+    <Content Include="content\ns-style-growl.css" />
     <Content Include="docs\Module.txt" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular-cookies.js" />
