@@ -39,13 +39,21 @@
         $scope.message = "This is About Page";
 
         activate();
-
+        
         function activate() {
-            common.activateController([], controllerId)
+            common.activateController([test()
+                   
+                ], controllerId)
                  .then(function () { log('Activated About'); });
         }
 
-
+        function test() {
+           
+                var test = setTimeout('test', 20000);
+                return test;
+            
+        }
+        
 
     };
 })();

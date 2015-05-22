@@ -18,6 +18,8 @@
             setRoutingHandlers: setRoutingHandlers
         };
 
+     
+
         return service;
         
         function setRoutingHandlers() {
@@ -42,7 +44,7 @@
 
         function handleRouteChangeStart() {
             $rootScope.$on('$routeChangeStart',
-                function () {
+                function (previous) {
                     spinner.spinnerRouteChangeShow();
                 });
         }
@@ -53,8 +55,9 @@
                     handleRouteChangeError = false;
                     var title = config.docTitle + ' ' + (current.title || '');
                     $rootScope.title = title;
-                    spinner.spinnerRouteChangeHide();
                 });
         }
+
+        
     }
 })();

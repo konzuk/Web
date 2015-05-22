@@ -49,7 +49,6 @@
 
         activate();
 
-       
         function changeLang(key) {
             var lang = key;
             var result = $.grep(config.locales.langList, function (e) { return e.keyLang === lang; });
@@ -64,14 +63,15 @@
         function activate() {
             common.activateController([], controllerId)
                  .then(function () {
-                     log("Activated Shell");
                      $scope.isFirstLoad = false;
                 });
         }
 
         $rootScope.$on(config.events.controllerActivateEvent,
             function (data) {
-                //DO something with data.controllerId
+
+                spinner.spinnerRouteChangeHide();
+               
             }
         );
 

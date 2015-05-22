@@ -2,7 +2,12 @@
 
     <div>
 
-        
+        <div ng-show="isTranslating || isFirstLoad" class="dissolve-animation">
+
+            <h1> Page is loading </h1>
+
+        </div>
+
         <div ng-hide="isTranslating || isFirstLoad">
 
             <p>
@@ -11,8 +16,9 @@
 
             <br />
 
-            <br />
-            <!--Collect the nav links, forms, and other content for toggling-->
+            <br/>
+
+
             <div class="nav nav-tabs">
                 <ul class="nav nav-tabs">
                     <li role="presentation" ng-repeat="nars in navBarLists" ng-class="{active : isActive(nars.href)}">
@@ -22,17 +28,16 @@
                     </li>
                 </ul>
             </div>
-            <!--/.navbar-collapse-->
 
 
-            <div ng-show="isRouteChanging || isDataGetting|| isTranslating">
-                <h1>busy....</h1>
-            </div>
+            <div class="loadingPage la-anim-10" ng-class="{'la-animate': isRouteChanging || isDataGetting|| isTranslating }"></div>
 
-            <div ng-hide="isRouteChanging || isDataGetting|| isTranslating">
-                <div ng-view=""></div>
-            </div>
 
+            
+                <div>
+                    <div ng-view="" class="shuffle-animation"></div>
+                </div>
+           
 
         </div>
 
