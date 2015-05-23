@@ -2,13 +2,7 @@
 
     <div>
 
-        <div ng-show="isTranslating || isFirstLoad" class="dissolve-animation">
-
-            <h1> Page is loading </h1>
-
-        </div>
-
-        <div ng-hide="isTranslating || isFirstLoad">
+        <div ng-hide="isTranslating || isFirstLoad" class="dissolve-animation">
 
             <p>
                 <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</a>
@@ -30,8 +24,7 @@
             </div>
 
 
-            <div class="loadingPage la-anim-10" ng-class="{'la-animate': isRouteChanging || isDataGetting|| isTranslating }"></div>
-
+            
 
             
                 <div>

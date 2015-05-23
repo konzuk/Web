@@ -87,6 +87,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\preLoader.js" />
     <Content Include="content\component.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.min.css" />
@@ -96,6 +97,9 @@
     <Content Include="content\ns-default.css" />
     <Content Include="content\ns-style-attached.css" />
     <Content Include="content\ns-style-growl.css" />
+    <Content Include="scripts\jquery.gsap.min.js" />
+    <Content Include="scripts\TimelineLite.min.js" />
+    <Content Include="scripts\TimelineMax.min.js" />
     <Content Include="docs\Module.txt" />
     <Content Include="scripts\angular-animate.min.js.map" />
     <Content Include="scripts\angular-cookies.js" />
@@ -163,6 +167,8 @@
     <Content Include="scripts\angular-sanitize.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\TweenLite.min.js" />
+    <Content Include="scripts\TweenMax.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="scripts\easing\" />
+    <Folder Include="scripts\plugins\" />
+    <Folder Include="scripts\utils\" />
     <Folder Include="WebApi\Models\" />
   </ItemGroup>
   <ItemGroup>

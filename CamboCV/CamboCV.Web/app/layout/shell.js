@@ -13,10 +13,7 @@
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
-
-        
-        
-        $scope.test = 'Test';
+        spinner.ActivateSpinner(true);
        
         $scope.navBarLists = config.navBars;
         $scope.langList = config.locales.langList;
@@ -24,6 +21,7 @@
         $scope.isDataGetting = false;
         $scope.isTranslating = true;
         $scope.isFirstLoad = false;
+;
 
 
         $scope.langBind = '';
@@ -79,6 +77,7 @@
         $rootScope.$on(config.events.routeChangeEvent,
             function(event, args) {
                 $scope.isRouteChanging = args.show;
+                spinner.ActivateSpinner($scope.isRouteChanging || $scope.isTranslating || $scope.isDataGetting);
 
             }
         );
@@ -86,13 +85,16 @@
         $rootScope.$on(config.events.translateEvent,
            function (event, args) {
                $scope.isTranslating = args.show;
-              
+               spinner.ActivateSpinner($scope.isRouteChanging || $scope.isTranslating || $scope.isDataGetting);
+
            }
        );
 
         $rootScope.$on(config.events.gettingDataEvent,
            function (event, args) {
                $scope.isDataGetting = args.show;
+               spinner.ActivateSpinner($scope.isRouteChanging || $scope.isTranslating || $scope.isDataGetting);
+
            }
        );
 
