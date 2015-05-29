@@ -1,38 +1,42 @@
-﻿using System.Data.Entity;
-using CamboCV.Entity.Table.User;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using CamboCV.Entity.Migrations;
+using CamboCV.Entity.Table.OAuth;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CamboCV.Entity
 {
    
-    public class DatabaseContext : DbContext
+    public class DatabaseContext : IdentityDbContext<IdentityUser>
     {
 
         public DatabaseContext()
             : base("name = CamboCVDB")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
-            //this.Configuration.LazyLoadingEnabled = true;
+
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DatabaseContext, Configuration>());
+            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
+            Database.SetInitializer(new CustomDropCreateDatabaseIfModelChanges());
+            this.Configuration.LazyLoadingEnabled = false;
             //this.Configuration.AutoDetectChangesEnabled = true;
+            this.Configuration.ProxyCreationEnabled = false;
         }
+
+
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
         
-        //User Tables
-        public DbSet<UserTable> UserTables { get; set; }
-       
+     
 
-        //Contact Tables
-        public DbSet<ContactTable> ContactTables { get; set; }
-        public DbSet<SessionTable> SessionTables { get; set; }
-       
-
-        protected override void OnModelCreating(DbModelBuilder TableBuilder)
+        protected override void OnModelCreating(DbModelBuilder tableBuilder)
         {
 
            
-            TableBuilder.Properties<string>().Configure(t => t.IsUnicode(true));
-
 
            
-            base.OnModelCreating(TableBuilder);
+            base.OnModelCreating(tableBuilder);
+
         }
     }
 }
