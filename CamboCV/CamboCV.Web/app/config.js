@@ -52,14 +52,17 @@
 
 
     var config = {
-        appErrorPrefix: '[KZ Error] ',
+        appErrorPrefix: '[CCV Error] ',
         docTitle: '',
         events: events,
         keyCodes: keyCodes,
         version: '1.0.0',
         locales: locales,
-        langCookie: 'langCookie',
+        langCookie: 'lc',
+        tm: TweenMax,
+        tl: new TimelineLite(),
         navBars: []
+
     };
 
     app.constant('DEBUG_MODE', /*DEBUG_MODE*/true /*DEBUG_MODE*/);
@@ -81,18 +84,20 @@
         $translateProvider.useLoader('$translatePartialLoader', {
             urlTemplate: 'api/{part}/{lang}'
         });
+
+        $translatePartialLoaderProvider.addPart('getLang');
+
+
         // Tell the module what language to use by default
         $translateProvider.preferredLanguage(locales.preferredLocale);
 
-        // Tell the module to store the language in the cookies
+        // Tell the module to store the language in the Local
         $translateProvider.useCookieStorage();
+       
 
         // Tell the module to use a key 'lang' in the storage instead of default key
         $translateProvider.storageKey(config.langCookie);
         $translateProvider.useSanitizeValueStrategy('escaped');
-        $translatePartialLoaderProvider.addPart('getLang');
-
-
     }]);
 
 

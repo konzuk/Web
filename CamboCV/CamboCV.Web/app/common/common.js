@@ -10,7 +10,6 @@
 
     // Must configure the common service and set its 
   
-
     commonModule.factory("common",
         ["$q", "$rootScope", "$timeout", "config", "logger", common]);
 
@@ -36,8 +35,6 @@
             $timeout: $timeout,
             activateController: activateController,
             logger: logger
-
-
         };
 
         return service;

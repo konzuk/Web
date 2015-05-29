@@ -9,7 +9,6 @@
 
     function shell($rootScope, $scope, $location, $translate, common, config,spinner) {
         
-       
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
@@ -17,11 +16,10 @@
        
         $scope.navBarLists = config.navBars;
         $scope.langList = config.locales.langList;
-        $scope.isRouteChanging = false;
+        $scope.isRouteChanging = true;
         $scope.isDataGetting = false;
         $scope.isTranslating = true;
-        $scope.isFirstLoad = false;
-;
+        $scope.isFirstLoad = true;
 
 
         $scope.langBind = '';
@@ -31,11 +29,13 @@
         };
 
 
+       
         $rootScope.$on('$translateLoadingStart', function () {
             spinner.spinnerTranslateShow();
         });
-
-        $rootScope.$on('$translateChangeEnd', function (event,args) {
+        
+        $rootScope.$on('$translateChangeEnd', function (event, args) {
+           
             changeLang(args.language);
         });
 
@@ -55,11 +55,38 @@
                 $scope.langBind = result[0].fontfamily.itemFont;
             }
             spinner.spinnerTranslateHide();
+            
         }
-       
+
+        function reRunTranslate($translate) {
+
+            var key = $translate.storageKey(),
+              storage = $translate.storage();
+
+            var fallbackFromIncorrectStorageValue = function () {
+                var preferred = $translate.preferredLanguage();
+                if (angular.isString(preferred)) {
+                    $translate.use(preferred);
+                    
+                } else {
+                    storage.put(key, $translate.use());
+                }
+            };
+
+            if (storage) {
+                if (!storage.get(key)) {
+                    fallbackFromIncorrectStorageValue();
+                } else {
+                    $translate.use(storage.get(key))['catch'](fallbackFromIncorrectStorageValue);
+                }
+            } else if (angular.isString($translate.preferredLanguage())) {
+                $translate.use($translate.preferredLanguage());
+            }
+        }
+
 
         function activate() {
-            common.activateController([], controllerId)
+            common.activateController([reRunTranslate($translate)], controllerId)
                  .then(function () {
                      $scope.isFirstLoad = false;
                 });

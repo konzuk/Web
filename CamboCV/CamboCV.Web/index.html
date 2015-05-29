@@ -2,14 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
 <head>
 
-    <style>
-        /* This helps the ng-show/ng-hide animations start at the right place. */
-        /* Since Angular has this but needs to load, this gives us the class early. */
-        .ng-hide {
-            display: none!important;
-        }
-    </style>
-
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,7 +21,6 @@
     <link rel="stylesheet" type="text/css" href="content/normalize.css" />
     <link rel="stylesheet" type="text/css" href="content/ns-default.css" />
     <link rel="stylesheet" type="text/css" href="content/ns-style-growl.css" />
-    <link rel="stylesheet" type="text/css" href="content/component.css" />
     <script src="scripts/modernizr.custom.js"></script>
     <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,37 +29,32 @@
 </head>
 <body>
    
-<div>
-    <div ng-include="'/app/layout/shell.html'"></div>
-</div>
-
-
-
+<div ng-include="'/app/layout/shell.html'"></div>
 
 
 <!-- Vendor Scripts -->
 <script src="scripts/jquery.min.js"></script>
-<script src="scripts/angular.js"></script>
-<script src="scripts/angular-animate.js"></script>
-<script src="scripts/angular-route.js"></script>
-<script src="scripts/angular-sanitize.js"></script>
-<script src="scripts/angular-cookies.js"></script>
+<script src="scripts/angular.min.js"></script>
+<script src="scripts/angular-animate.min.js"></script>
+<script src="scripts/angular-route.min.js"></script>
+<script src="scripts/angular-sanitize.min.js"></script>
+<script src="scripts/angular-cookies.min.js"></script>
 <script src="scripts/angular-translate.min.js"></script>
-<script src="scripts/angular-translate-storage-cookie.js"></script>
-<script src="scripts/angular-translate-storage-local.js"></script>
-<script src="scripts/angular-translate-handler-log.js"></script>
-<script src="scripts/angular-translate-loader-partial.js"></script>
+<script src="scripts/angular-translate-storage-cookie.min.js"></script>
+<!--<script src="scripts/angular-translate-storage-local.js"></script>-->
+<script src="scripts/angular-translate-handler-log.min.js"></script>
+<script src="scripts/angular-translate-loader-partial.min.js"></script>
 
 
 <!--template-->
 <script src="scripts/classie.js"></script>
 <script src="scripts/notificationFx.js"></script>
-<script src="scripts/TweenMax.min.js"></script>
+<script src="scripts/TweenMax.js"></script>
 
 <!-- Bootstrapping -->
 <script src="app/app.js"></script>
 <script src="app/config.js"></script>
-<script src="app/config.exceptionHandler.js"></script>
+<!--<script src="app/config.exceptionHandler.js"></script>-->
 
 <!-- common Modules -->
 <script src="app/common/common.js"></script>
@@ -82,6 +68,7 @@
 
 <!-- Module -->
 <script src="app/layout/shell.js"></script>
+<script src="app/layout/shellStl.js"></script>
 <script src="app/module/home/home.js"></script>
 <script src="app/module/about/about.js"></script>
 

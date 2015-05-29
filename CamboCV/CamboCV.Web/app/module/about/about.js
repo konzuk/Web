@@ -41,20 +41,9 @@
         activate();
         
         function activate() {
-            common.activateController([test()
-                   
-                ], controllerId)
+            common.activateController([], controllerId)
                  .then(function () { log('Activated About'); });
         }
-
-        function test() {
-           
-                var test = setTimeout('test', 20000);
-                return test;
-            
-        }
-        
-
     };
 })();
 

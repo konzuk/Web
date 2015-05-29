@@ -9,7 +9,10 @@
     // Point to the factory definition function.
     angular.module('app')
         .factory(serviceId,
-            ['$location', '$rootScope', 'config', 'logger','spinner', routemediator]);
+            ['$location', '$rootScope', 'config', 'logger', 'spinner', routemediator]);
+
+
+    
 
     function routemediator($location, $rootScope, config, logger, spinner) {
         // Define the functions and properties to reveal.

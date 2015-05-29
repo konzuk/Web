@@ -2,7 +2,7 @@
 
     <div>
 
-        <div ng-hide="isTranslating || isFirstLoad" class="dissolve-animation">
+        <div ng-hide="isTranslating || isFirstLoad">
 
             <p>
                 <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</a>
@@ -10,7 +10,7 @@
 
             <br />
 
-            <br/>
+            <br />
 
 
             <div class="nav nav-tabs">
@@ -24,13 +24,13 @@
             </div>
 
 
-            
 
-            
-                <div>
-                    <div ng-view="" class="shuffle-animation"></div>
-                </div>
-           
+
+
+            <div id="theView">
+                <div ng-view="" class="test"></div>
+            </div>
+
 
         </div>
 
