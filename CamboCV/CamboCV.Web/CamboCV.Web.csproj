@@ -165,7 +165,7 @@
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\easing\EasePack.min.js" />
     <Content Include="scripts\jquery.gsap.min.js" />
-    <Content Include="app\layout\shellStl.js" />
+    <Content Include="app\animation.js" />
     <Content Include="scripts\jquery.mCustomScrollbar.js" />
     <Content Include="scripts\jquery.mousewheel-3.0.6.js" />
     <Content Include="scripts\jquery.mousewheel.js" />
