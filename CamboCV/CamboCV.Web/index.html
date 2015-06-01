@@ -6,8 +6,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    
+
+
     <title translate="">{{title}}</title>
 
     <meta name="description" content="" />
@@ -21,56 +21,61 @@
     <link rel="stylesheet" type="text/css" href="content/normalize.css" />
     <link rel="stylesheet" type="text/css" href="content/ns-default.css" />
     <link rel="stylesheet" type="text/css" href="content/ns-style-growl.css" />
+    <link rel="stylesheet" type="text/css" href="content/jquery.mCustomScrollbar.css" />
     <script src="scripts/modernizr.custom.js"></script>
-    <!--[if IE]>
+    <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
 </head>
 <body>
-   
-<div ng-include="'/app/layout/shell.html'"></div>
+
+    <div ng-include="'/app/layout/shell.html'"></div>
+
+    <!-- Vendor Scripts -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-animate.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script>
+    <script src="scripts/angular-cookies.min.js"></script>
+    <script src="scripts/angular-translate.js"></script>
+    <script src="scripts/angular-translate-storage-cookie.min.js"></script>
+    <!--<script src="scripts/angular-translate-storage-local.js"></script>-->
+    <script src="scripts/angular-translate-handler-log.min.js"></script>
+    <script src="scripts/angular-translate-loader-partial.min.js"></script>
 
 
-<!-- Vendor Scripts -->
-<script src="scripts/jquery.min.js"></script>
-<script src="scripts/angular.min.js"></script>
-<script src="scripts/angular-animate.min.js"></script>
-<script src="scripts/angular-route.min.js"></script>
-<script src="scripts/angular-sanitize.min.js"></script>
-<script src="scripts/angular-cookies.min.js"></script>
-<script src="scripts/angular-translate.min.js"></script>
-<script src="scripts/angular-translate-storage-cookie.min.js"></script>
-<!--<script src="scripts/angular-translate-storage-local.js"></script>-->
-<script src="scripts/angular-translate-handler-log.min.js"></script>
-<script src="scripts/angular-translate-loader-partial.min.js"></script>
+    <!--template-->
+    <script src="scripts/classie.js"></script>
+    <script src="scripts/notificationFx.js"></script>
+    <script src="scripts/TweenMax.js"></script>
+    <script src="scripts/jquery.mousewheel.js"></script>
+    <script src="scripts/jquery.mCustomScrollbar.js"></script>
 
 
-<!--template-->
-<script src="scripts/classie.js"></script>
-<script src="scripts/notificationFx.js"></script>
-<script src="scripts/TweenMax.js"></script>
+    <!-- Bootstrapping -->
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <!--<script src="app/config.exceptionHandler.js"></script>-->
+    <!-- common Modules -->
+    <script src="app/common/common.js"></script>
+    <script src="app/common/logger.js"></script>
+    <script src="app/common/spinner.js"></script>
 
-<!-- Bootstrapping -->
-<script src="app/app.js"></script>
-<script src="app/config.js"></script>
-<!--<script src="app/config.exceptionHandler.js"></script>-->
-
-<!-- common Modules -->
-<script src="app/common/common.js"></script>
-<script src="app/common/logger.js"></script>
-<script src="app/common/spinner.js"></script>
-
-<!-- app Services -->
-<script src="app/data.js"></script>
-<script src="app/directives.js"></script>
-<script src="app/routemediator.js"></script>
+    <!-- app Services -->
+    <script src="app/data.js"></script>
+    <script src="app/directives.js"></script>
+    <script src="app/routemediator.js"></script>
 
 <!-- Module -->
-<script src="app/layout/shell.js"></script>
-<script src="app/layout/shellStl.js"></script>
-<script src="app/module/home/home.js"></script>
-<script src="app/module/about/about.js"></script>
+
+    <script src="app/layout/shell.js"></script>
+    <script src="app/layout/shellStl.js"></script>
+    <script src="app/module/home/home.js"></script>
+    <script src="app/module/about/about.js"></script>
+
+
 
 </body>
 </html>

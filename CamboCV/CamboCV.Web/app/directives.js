@@ -3,10 +3,6 @@
 
     var app = angular.module('app');
 
-
-   
-
-
       app.directive("translate", ["config",
 
         function (config) {
@@ -24,6 +20,182 @@
 
             
         }]);
+
+      app.directive("theSlider", ["config",
+          function (config) {
+
+              var directive = {
+                  restrict: 'A',
+                  link: function ($scope, element, attr) {
+
+                      var tm = config.tm;
+
+                      tm.set(element,
+                          {
+                              backgroundColor: '#ff0000',
+                              position: 'fixed',
+                              width: '100px',
+                              height: 'calc(100% - 50px)',
+                              marginTop: '50px',
+                              top: '0px'
+                          }
+                      );
+
+                      $(element).mCustomScrollbar({
+
+                          scrollButtons: { enable: true },
+                          autoExpandScrollbar: true,
+                          autoHideScrollbar: true,
+                          theme: "dark-thin"
+                      });
+
+
+                     
+
+
+
+                  }
+              };
+              return directive;
+
+
+          }]);
+
+      app.directive("theTop", ["config",
+            function (config) {
+
+                var directive = {
+                    restrict: 'A',
+                    link: function ($scope, element, attr) {
+
+                        var tm = config.tm;
+
+                        tm.set(element,
+                            {
+                                backgroundColor: '#ffa500',
+                                position: 'fixed',
+                                width: '100%',
+                                marginTop: '0px',
+                                height: '50px',
+                                top: '0px',
+                            }
+                        );
+
+                    }
+                };
+                return directive;
+
+
+            }]);
+
+      app.directive("theView", ["config",
+             function (config) {
+
+                 var directive = {
+                     restrict: 'A',
+                     link: function ($scope, element, attr) {
+
+                         var tm = config.tm;
+
+                         tm.set(element,
+                             {
+                                 backgroundColor: '#da70d6',
+                                 marginLeft: '100px',
+                                 marginTop: '50px',
+                                 position: 'fixed',
+                                 width: 'calc(100% - 100px)',
+                                 height: 'calc(100% - 50px)'
+                                 
+                             }
+                         );
+
+                        
+
+                     }
+                 };
+                 return directive;
+
+
+             }]);
+
+
+      app.directive("theInnerView", ["config",
+             function (config) {
+
+                 var directive = {
+                     restrict: 'A',
+                     link: function ($scope, element, attr) {
+
+                         var tm = config.tm;
+
+                         tm.set(element,
+                             {
+                                 position:'absolute',
+                                 width: '100%',
+                                 height: 'auto',
+                                 maxHeight: '100%'
+
+                             }
+                         );
+
+                         $(element).mCustomScrollbar({
+                             scrollButtons: { enable: true },
+                             autoExpandScrollbar: true,
+                             autoHideScrollbar: true,
+                             theme: "inset-2-dark",
+                             callbacks: {
+                                 onScroll: function () {
+                                     if (this.mcs.top === 0) {
+                                         tm.to('.toTop', 0.5, { opacity: 0 });
+                                     } else {
+                                         tm.to('.toTop', 0.5, { opacity: 1 });
+                                     }
+                                 }
+                             }
+                         });
+
+                     }
+                 };
+                 return directive;
+
+
+             }]);
+
+      app.directive("totop", ["config",
+         function (config) {
+             var directive = {
+                 template: '<i class="fa fa-5x fa-angle-up"></i>',
+                 restrict: 'A',
+                 link: function ($scope, element, attr) {
+
+                     var tm = config.tm;
+
+                     tm.set(element,
+                             {
+                                 opacity: 0,
+                                 position: 'fixed',
+                                 right: '20px',
+                                 bottom:'20px'
+                             }
+                         );
+
+                     element.addClass('toTop');
+
+                     element.find('i').click(function (e) {
+                                    e.preventDefault();
+                                    $('#theView').mCustomScrollbar('scrollTo', 'top');
+                                });
+                 }
+             };
+
+             
+
+             return directive;
+
+
+         }]);
+
+      
 
 
 

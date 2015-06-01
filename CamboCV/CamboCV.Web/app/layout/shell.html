@@ -1,40 +1,34 @@
 ﻿<div ng-controller="shell">
 
-    <div>
 
-        <div ng-hide="isTranslating || isFirstLoad">
+    <div id="shell" class="ngAnimateTwo" ng-if="!isTranslating && !isFirstLoad" style="position: absolute">
 
+        <div dir="rtl" the-slider>
+            <div dir="ltr">
+                <div id="theNav">
+                    <ul>
+                        <li ng-repeat="nars in navBarLists" ng-class="{active : isActive(nars.href)}">
+                            <a ng-href="{{nars.href}}" translate="">
+                                {{ nars.text }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div the-Top>
             <p>
                 <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</a>
             </p>
-
-            <br />
-
-            <br />
-
-
-            <div class="nav nav-tabs">
-                <ul class="nav nav-tabs">
-                    <li role="presentation" ng-repeat="nars in navBarLists" ng-class="{active : isActive(nars.href)}">
-                        <a ng-href="{{nars.href}}" translate="">
-                            {{ nars.text }}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-
-
-
-
-            <div id="theView">
-                <div ng-view="" class="test"></div>
-            </div>
-
-
         </div>
 
+        <div the-view>
+            <div ng-view="" class="ngAnimateTwo" the-inner-view></div>
+        </div>
 
-
+        <span totop  >
+            
+        </span>
     </div>
+
 </div>

@@ -1,0 +1,130 @@
+
+
+
+////// Simple
+$("#theView").mCustomScrollbar({
+                    
+scrollButtons: { enable: true },
+autoExpandScrollbar: true,
+autoHideScrollbar: true,
+theme: "inset-2-dark"
+
+});
+
+                
+
+////// snap Amount
+//$("#content-1").mCustomScrollbar({
+//    axis: "x",
+//    theme: "inset",
+//    advanced: {
+//        autoExpandHorizontalScroll: true
+//    },
+//    scrollButtons: {
+//        enable: true,
+//        scrollType: "stepped"
+//    },
+//    keyboard: { scrollType: "stepped" },
+//    snapAmount: amount,
+//    mouseWheel: { scrollAmount: amount }
+//});
+
+////// set position
+//$("#content-1").mCustomScrollbar({
+//    setTop: "540px",
+//});
+//$('.demo-x').mCustomScrollbar('scrollTo', '#test-id');
+//$('.demo-x').find('.mCSB_container').find('#test-id+p'));
+//$('.demo-x').mCustomScrollbar('scrollTo','-=350');
+//$('.demo-x').mCustomScrollbar('scrollTo','100');
+//$('.demo-x').mCustomScrollbar('scrollTo','0');
+//$('.demo-y').mCustomScrollbar('scrollTo', 'bottom');
+//$('.demo-y').mCustomScrollbar('scrollTo', ['bottom', 'right']);
+
+
+//////Neverend scrolled
+//$(".content").mCustomScrollbar({
+//    theme: "light-2",
+//    scrollButtons: {
+//        enable: true
+//    },
+//    callbacks: {
+//        onTotalScroll: function () { addContent(this) },
+//        onTotalScrollOffset: 100,
+//        alwaysTriggerOffsets: false
+//    }
+//});
+//function addContent(el) {
+//    var c = "<h2>Appended content</h2>";
+//    for (var i = 0; i < 3; i++) {
+//        c += "<p>" + el.mcs.content.find("p:eq(" + i + ")").html() + "</p>";
+//    }
+//    c += "<p>End of appended content.</p>";
+//    el.mcs.content.append(c);
+//    $(".offset").appendTo(el.mcs.content);
+//}
+
+
+////////////Add param
+$(".content").mCustomScrollbar({
+					setWidth:false,
+					setHeight:false,
+					setTop:0,
+					setLeft:0,
+					axis:"y",
+					scrollbarPosition:"inside",
+					scrollInertia:950,
+					autoDraggerLength:true,
+					autoHideScrollbar:false,
+					autoExpandScrollbar:false,
+					alwaysShowScrollbar:0,
+					snapAmount:null,
+					snapOffset:0,
+					mouseWheel:{
+						enable:true,
+						scrollAmount:"auto",
+						axis:"y",
+						preventDefault:false,
+						deltaFactor:"auto",
+						normalizeDelta:false,
+						invert:false,
+						disableOver:["select","option","keygen","datalist","textarea"]
+					},
+					scrollButtons:{
+						enable:false,
+						scrollType:"stepless",
+						scrollAmount:"auto"
+					},
+					keyboard:{
+						enable:true,
+						scrollType:"stepless",
+						scrollAmount:"auto"
+					},
+					contentTouchScroll:25,
+					advanced:{
+						autoExpandHorizontalScroll:false,
+						autoScrollOnFocus:"input,textarea,select,button,datalist,keygen,a[tabindex],area,object,[contenteditable='true']",
+						updateOnContentResize:true,
+						updateOnImageLoad:true,
+						updateOnSelectorChange:false,
+						releaseDraggableSelectors:false
+					},
+					theme:"light",
+					callbacks:{
+						onInit:false,
+						onScrollStart:false,
+						onScroll:false,
+						onTotalScroll:false,
+						onTotalScrollBack:false,
+						whileScrolling:false,
+						onTotalScrollOffset:0,
+						onTotalScrollBackOffset:0,
+						alwaysTriggerOffsets:true,
+						onOverflowY:false,
+						onOverflowX:false,
+						onOverflowYNone:false,
+						onOverflowXNone:false
+					},
+					live:false,
+					liveSelector:null
+				});

@@ -1,46 +1,100 @@
 ﻿(function () {
     'use strict';
 
-
     var app = angular.module("app");
 
-    app.animation('.test', ['config', function (config) {
+    app.animation('.ngAnimateTwo', ['config', function (config) {
         var tm = config.tm;
         return {
             enter: function (element, done) {
+
+                var cladd = 'testAdd';
+                var cladddot = '.' + cladd;
+
+                element.addClass(cladd);
                 
-                classie.add(element[0], 'testAdd');
+                tm.killChildTweensOf(document.getElementById('shell'), true);
 
-
-                tm.killChildTweensOf(document.getElementById('theView'), true);
-              
-
-                tm.set('.testAdd', { opacity: 0, x: '20px' });
-                tm.to('.testAdd', 1, {
-                    x: '0',
+                tm.set(cladddot, { opacity: 0, left: '+=20px' });
+               
+                tm.to(cladddot, 1, {
+                    left: '-=20px',
                     delay: 0.5,
                     opacity: 1,
-                    
                     onComplete: function() {
-                        classie.remove(element[0], 'testAdd');
+                        element.removeClass(cladd);
                         done();
                     }
                 });
             },
-
-
             leave: function (element, done) {
-                classie.add(element[0], 'testRemove');
-                 
-                tm.to('.testRemove', 0.5, {
+
+                var cladd = 'testRemove';
+                var cladddot = '.' + cladd;
+
+                element.addClass(cladd);
+
+                tm.to(cladddot, 0.5, {
                     opacity: 0,
-                    x: '20px',
+                    left: '+=20px',
+
+
                     onComplete: function () {
-                        classie.remove(element[0], 'testRemove');
+                        element.removeClass(cladd);
                         done();
                     }
                 });
             }
         };
     }]);
+
+
+    app.animation('.ngAnimateOne', ['config', function (config) {
+        var tm = config.tm;
+        return {
+            enter: function (element, done) {
+
+                var cladd = 'testAdd';
+                var cladddot = '.' + cladd;
+
+                element.addClass(cladd);
+
+                tm.killChildTweensOf(document.getElementById('shell'), true);
+
+                tm.set(cladddot, { opacity: 0 });
+
+                //tm.to(cladddot, 0.1, { left: '+=20px', position: 'fixed' });
+
+                tm.to(cladddot, 1, {
+                    delay: 0.5,
+                    opacity: 1,
+
+                    onComplete: function () {
+                        element.removeClass(cladd);
+                        done();
+                    }
+                });
+            },
+
+            leave: function (element, done) {
+
+                var cladd = 'testRemove';
+                var cladddot = '.' + cladd;
+
+                element.addClass(cladd);
+
+                tm.to(cladddot, 0.5, {
+                    opacity: 0,
+                    onComplete: function () {
+                        element.removeClass(cladd);
+                        done();
+                    }
+                });
+            }
+        };
+    }]);
+
+    
+
+
 })();

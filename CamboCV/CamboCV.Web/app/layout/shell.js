@@ -30,7 +30,7 @@
 
 
        
-        $rootScope.$on('$translateLoadingStart', function () {
+        $rootScope.$on('$translateChangeStart', function () {
             spinner.spinnerTranslateShow();
         });
         
@@ -44,6 +44,12 @@
             // You can change the language during runtime
             $translate.use(lang);
         };
+
+        var top = document.getElementById('theTop'),
+        slider = document.getElementById('theSlider'),
+        view = document.getElementById('theView');
+
+      
 
         activate();
 

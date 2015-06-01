@@ -144,6 +144,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\layout\shell.html" />
     <Content Include="App_Data\CamboCV.mdf" />
     <Content Include="App_Data\CamboCV_log.ldf">
       <DependentUpon>CamboCV.mdf</DependentUpon>
@@ -152,6 +153,11 @@
     <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="content\mCSB_buttons.png" />
+    <Content Include="content\style.css" />
+    <Content Include="docs\ScrollBar Ref.txt" />
+    <Content Include="content\jquery.mCustomScrollbar.css" />
+    <Content Include="content\jquery.mCustomScrollbar.min.css" />
     <Content Include="content\normalize.css" />
     <Content Include="content\ns-default.css" />
     <Content Include="content\ns-style-attached.css" />
@@ -160,6 +166,9 @@
     <Content Include="scripts\easing\EasePack.min.js" />
     <Content Include="scripts\jquery.gsap.min.js" />
     <Content Include="app\layout\shellStl.js" />
+    <Content Include="scripts\jquery.mCustomScrollbar.js" />
+    <Content Include="scripts\jquery.mousewheel-3.0.6.js" />
+    <Content Include="scripts\jquery.mousewheel.js" />
     <Content Include="scripts\plugins\AttrPlugin.min.js" />
     <Content Include="scripts\plugins\BezierPlugin.min.js" />
     <Content Include="scripts\plugins\ColorPropsPlugin.min.js" />
@@ -225,7 +234,6 @@
     <Content Include="app\config.js" />
     <Content Include="app\data.js" />
     <Content Include="app\directives.js" />
-    <Content Include="app\layout\shell.html" />
     <Content Include="app\layout\shell.js" />
     <Content Include="app\module\about\about.html" />
     <Content Include="app\module\about\about.js" />
