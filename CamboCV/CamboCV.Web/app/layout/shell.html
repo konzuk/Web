@@ -1,9 +1,16 @@
 ﻿<div ng-controller="shell">
 
 
-    <div id="shell" class="ngAnimateOne" ng-if="!isTranslating && !isFirstLoad" style="position: absolute">
+    <div id="shell" class="ngAnimateTwo" ng-if="!isTranslating && !isFirstLoad">
 
-        <div dir="rtl" the-slider>
+
+        <header the-top>
+            <p>
+                <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</a>
+            </p>
+        </header>
+
+        <aside dir="rtl" the-slider>
             <div dir="ltr">
                 <div id="theNav">
                     <ul>
@@ -15,20 +22,23 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div the-Top>
-            <p>
-                <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</a>
-            </p>
-        </div>
+        </aside>
+        <footer the-footer>
+            <strong class="theSliderFooter">
+                Copyright &copy; 2014-2015. <br />
+                All rights reserved.
+            </strong>
+        </footer>
 
         <div the-view>
             <div ng-view="" class="ngAnimateTwo" the-inner-view></div>
         </div>
 
-        <span totop  >
-            
-        </span>
+       
+
+        <totop />
+
+
     </div>
 
 </div>

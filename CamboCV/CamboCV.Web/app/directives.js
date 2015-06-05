@@ -3,6 +3,12 @@
 
     var app = angular.module('app');
 
+    var topHeight = '50px';
+    var assideWidth = '100px';
+    var footerHeight = '50px';
+    var twfHeight = '100px';
+
+
       app.directive("translate", ["config",
 
         function (config) {
@@ -29,17 +35,19 @@
                   link: function ($scope, element, attr) {
 
                       var tm = config.tm;
-
+                      
                       tm.set(element,
                           {
                               backgroundColor: '#ff0000',
                               position: 'fixed',
-                              width: '100px',
-                              height: 'calc(100% - 50px)',
-                              marginTop: '50px',
+                              width: assideWidth,
+                              height: 'calc(100% - ' + twfHeight + ')',
+                              marginTop: topHeight,
                               top: '0px'
                           }
                       );
+
+                     
 
                       $(element).mCustomScrollbar({
 
@@ -75,9 +83,7 @@
                                 backgroundColor: '#ffa500',
                                 position: 'fixed',
                                 width: '100%',
-                                marginTop: '0px',
-                                height: '50px',
-                                top: '0px',
+                                height: topHeight,
                             }
                         );
 
@@ -87,6 +93,7 @@
 
 
             }]);
+
 
       app.directive("theView", ["config",
              function (config) {
@@ -100,12 +107,11 @@
                          tm.set(element,
                              {
                                  backgroundColor: '#da70d6',
-                                 marginLeft: '100px',
-                                 marginTop: '50px',
+                                 marginLeft: assideWidth,
+                                 marginTop: topHeight,
                                  position: 'fixed',
-                                 width: 'calc(100% - 100px)',
-                                 height: 'calc(100% - 50px)'
-                                 
+                                 width: 'calc(100% - '+ assideWidth +')',
+                                 height: 'calc(100% - '+ topHeight +')'
                              }
                          );
 
@@ -119,6 +125,34 @@
              }]);
 
 
+      app.directive("theFooter", ["config",
+               function (config) {
+
+                   var directive = {
+                       restrict: 'A',
+                       link: function ($scope, element, attr) {
+
+                           var tm = config.tm;
+
+                           tm.set(element,
+                               {
+                                   backgroundColor: '#ffdd00',
+                                   position: 'fixed',
+                                   width: assideWidth,
+                                   height: footerHeight,
+                                   bottom: '0px'
+                               }
+                           );
+
+
+
+                       }
+                   };
+                   return directive;
+
+
+               }]);
+
       app.directive("theInnerView", ["config",
              function (config) {
 
@@ -130,7 +164,7 @@
 
                          tm.set(element,
                              {
-                                 position:'absolute',
+                                 
                                  width: '100%',
                                  height: 'auto',
                                  maxHeight: '100%'
@@ -146,9 +180,9 @@
                              callbacks: {
                                  onScroll: function () {
                                      if (this.mcs.top === 0) {
-                                         tm.to('.toTop', 0.5, { opacity: 0 });
+                                         tm.to('.toTop', 0.5, { opacity: 0, display: 'none' });
                                      } else {
-                                         tm.to('.toTop', 0.5, { opacity: 1 });
+                                         tm.to('.toTop', 0.5, { opacity: 1, display: 'inherit' });
                                      }
                                  }
                              }
@@ -165,13 +199,14 @@
          function (config) {
              var directive = {
                  template: '<i class="fa fa-5x fa-angle-up"></i>',
-                 restrict: 'A',
+                 restrict: 'E',
                  link: function ($scope, element, attr) {
 
                      var tm = config.tm;
 
                      tm.set(element,
                              {
+                                 display: 'none',
                                  opacity: 0,
                                  position: 'fixed',
                                  right: '20px',
