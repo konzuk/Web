@@ -4,6 +4,22 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+
+a {
+  color: #efefef;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #afafaf;
+  text-decoration: none;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
 .btn-default,
 .btn-primary,
 .btn-success,
