@@ -1,23 +1,23 @@
-﻿<div ng-controller="shell">
+﻿<div ng-controller="shell" the-shell>
 
 
     <div id="shell" class="ngAnimateTwo" ng-if="!isTranslating && !isFirstLoad">
 
 
         <header the-top>
-            <p>
-                <a ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</a>
-            </p>
+           
+                <div style="cursor: pointer; display: inline" ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">{{lang.valuelang}}</div>
+            
         </header>
 
         <aside dir="rtl" the-slider>
             <div dir="ltr">
-                <div id="theNav">
+                <div>
                     <ul>
                         <li ng-repeat="nars in navBarLists" ng-class="{active : isActive(nars.href)}">
-                            <a ng-href="{{nars.href}}" translate="">
+                            <div style="cursor: pointer" ng-click="goto(nars.href)" translate="">
                                 {{ nars.text }}
-                            </a>
+                            </div>
                         </li>
                     </ul>
                 </div>

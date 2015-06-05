@@ -9,9 +9,11 @@
     var twfHeight = '100px';
 
     var mainColor = '#3c8dbc';
-    var subColor = '#a9a9a9';
+    var textColorLight = '#efefef';
+    var textColorDark = '#425566';
     var backColor = '#425566';
-    var viewColor = '##a9a9a9';
+    var viewColor = '#efefef';
+
 
 
       app.directive("translate", ["config",
@@ -24,13 +26,33 @@
                     $scope.$watch('langBind', function () {
                         element.css("font-family", $scope.langBind);
                     });
-                    
                 }
             };
             return directive;
 
             
         }]);
+         app.directive("theShell", ["config",
+              function (config) {
+
+                  var directive = {
+                      restrict: 'A',
+                      link: function ($scope, element, attr) {
+
+                          var tm = config.tm;
+
+                          tm.set(element,
+                              {
+                                  color: textColorLight
+                              }
+                          );
+
+                      }
+                  };
+                  return directive;
+
+
+              }]);
 
       app.directive("theSlider", ["config",
           function (config) {
@@ -43,6 +65,7 @@
                       
                       tm.set(element,
                           {
+                              color:textColorLight,
                               backgroundColor: backColor,
                               position: 'fixed',
                               width: assideWidth,
@@ -73,6 +96,10 @@
 
 
           }]);
+
+
+     
+
 
       app.directive("theTop", ["config",
             function (config) {
@@ -170,6 +197,7 @@
                          tm.set(element,
                              {
                                  
+                                 color: textColorDark,
                                  width: '100%',
                                  height: 'auto',
                                  maxHeight: '100%'

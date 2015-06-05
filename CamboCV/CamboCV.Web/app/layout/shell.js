@@ -40,6 +40,12 @@
         });
 
 
+        $scope.goto = function (hash) {
+            if ($location.path === hash) return;
+            $location.path(hash);
+        };
+
+
         $scope.setLang = function (lang) {
             // You can change the language during runtime
             $translate.use(lang);

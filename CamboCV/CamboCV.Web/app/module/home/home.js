@@ -27,7 +27,7 @@
     app.run(["config",
       function (config) {
           config.navBars.push({
-              href: "#/home",
+              href: "/home",
               text: "HomePage",
               level: 1
           });

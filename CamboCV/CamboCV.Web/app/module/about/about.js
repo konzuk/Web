@@ -24,7 +24,7 @@
     app.run(['config',
       function (config) {
           config.navBars.push({
-              href: "#/about",
+              href: "/about",
               text: "AboutPage"
           });
       }
