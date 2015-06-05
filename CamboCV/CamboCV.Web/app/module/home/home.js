@@ -43,7 +43,7 @@
         activate();
         function activate() {
             common.activateController([], controllerId)
-                 .then(function () { log("Activated Home"); });
+                 .then(function () {});
         }
     };
 })();

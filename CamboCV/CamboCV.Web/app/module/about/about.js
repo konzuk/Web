@@ -42,7 +42,7 @@
         
         function activate() {
             common.activateController([], controllerId)
-                 .then(function () { log('Activated About'); });
+                 .then(function () { });
         }
     };
 })();
