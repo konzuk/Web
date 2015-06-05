@@ -144,15 +144,60 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\animation.js" />
+    <Content Include="app\app.js" />
+    <Content Include="app\common\common.js" />
+    <Content Include="app\common\logger.js" />
+    <Content Include="app\common\spinner.js" />
+    <Content Include="app\config.exceptionHandler.js" />
+    <Content Include="app\config.js" />
+    <Content Include="app\data.js" />
+    <Content Include="app\directives.js" />
     <Content Include="app\layout\shell.html" />
+    <Content Include="app\layout\shell.js" />
+    <Content Include="app\module\about\about.html" />
+    <Content Include="app\module\about\about.js" />
+    <Content Include="app\module\home\home.html" />
+    <Content Include="app\module\home\home.js" />
+    <Content Include="app\routemediator.js" />
     <Content Include="App_Data\CamboCV.mdf" />
     <Content Include="App_Data\CamboCV_log.ldf">
       <DependentUpon>CamboCV.mdf</DependentUpon>
     </Content>
+    <Content Include="content\bootstrap-theme.css" />
+    <Content Include="content\bootstrap-theme.min.css" />
     <Content Include="content\bootstrap.css" />
+    <Content Include="content\bootstrap.min.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="content\fonts\glyphicons\glyphicons-halflings-regular.svg" />
+    <Content Include="content\img\avatar.png" />
+    <Content Include="content\img\avatar04.png" />
+    <Content Include="content\img\avatar2.png" />
+    <Content Include="content\img\avatar3.png" />
+    <Content Include="content\img\avatar5.png" />
+    <Content Include="content\img\boxed-bg.jpg" />
+    <Content Include="content\img\boxed-bg.png" />
+    <Content Include="content\img\credit\american-express.png" />
+    <Content Include="content\img\credit\cirrus.png" />
+    <Content Include="content\img\credit\mastercard.png" />
+    <Content Include="content\img\credit\mestro.png" />
+    <Content Include="content\img\credit\paypal.png" />
+    <Content Include="content\img\credit\paypal2.png" />
+    <Content Include="content\img\credit\visa.png" />
+    <Content Include="content\img\default-50x50.gif" />
+    <Content Include="content\img\icons.png" />
+    <Content Include="content\img\photo1.png" />
+    <Content Include="content\img\photo2.png" />
+    <Content Include="content\img\user1-128x128.jpg" />
+    <Content Include="content\img\user2-160x160.jpg" />
+    <Content Include="content\img\user3-128x128.jpg" />
+    <Content Include="content\img\user4-128x128.jpg" />
+    <Content Include="content\img\user5-128x128.jpg" />
+    <Content Include="content\img\user6-128x128.jpg" />
+    <Content Include="content\img\user7-128x128.jpg" />
+    <Content Include="content\img\user8-128x128.jpg" />
     <Content Include="content\mCSB_buttons.png" />
     <Content Include="content\style.css" />
     <Content Include="docs\ScrollBar Ref.txt" />
@@ -165,7 +210,6 @@
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\easing\EasePack.min.js" />
     <Content Include="scripts\jquery.gsap.min.js" />
-    <Content Include="app\animation.js" />
     <Content Include="scripts\jquery.mCustomScrollbar.js" />
     <Content Include="scripts\jquery.mousewheel-3.0.6.js" />
     <Content Include="scripts\jquery.mousewheel.js" />
@@ -212,6 +256,11 @@
     <Content Include="content\fonts\font-awesome-4.3.0\fonts\fontawesome-webfont.woff2" />
     <Content Include="content\fonts\font-awesome-4.3.0\fonts\FontAwesome.otf" />
     <Content Include="content\bootstrap.css.map" />
+    <Content Include="content\bootstrap-theme.css.map" />
+    <Content Include="content\fonts\glyphicons\glyphicons-halflings-regular.eot" />
+    <Content Include="content\fonts\glyphicons\glyphicons-halflings-regular.ttf" />
+    <Content Include="content\fonts\glyphicons\glyphicons-halflings-regular.woff" />
+    <Content Include="content\fonts\glyphicons\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\cambocv - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\cambocv - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
@@ -226,20 +275,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.js" />
-    <Content Include="app\common\common.js" />
-    <Content Include="app\common\logger.js" />
-    <Content Include="app\common\spinner.js" />
-    <Content Include="app\config.exceptionHandler.js" />
-    <Content Include="app\config.js" />
-    <Content Include="app\data.js" />
-    <Content Include="app\directives.js" />
-    <Content Include="app\layout\shell.js" />
-    <Content Include="app\module\about\about.html" />
-    <Content Include="app\module\about\about.js" />
-    <Content Include="app\module\home\home.html" />
-    <Content Include="app\module\home\home.js" />
-    <Content Include="app\routemediator.js" />
     <Content Include="docs\Framework.txt" />
     <Content Include="index.html" />
     <Content Include="scripts\angular-animate.js" />
