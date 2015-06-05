@@ -49,8 +49,8 @@ namespace CamboCV.Web
             {
 
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
+                TokenEndpointPath = new PathString("/api/token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(10),
                 Provider = new SimpleAuthorizationServerProvider(),
                 RefreshTokenProvider = new SimpleRefreshTokenProvider()
             };
