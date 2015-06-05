@@ -6,6 +6,13 @@ using Microsoft.Owin.Security.OAuth;
 
 namespace CamboCV.Entity
 {
+
+    public enum ApplicationTypes
+    {
+        JavaScript = 0,
+        NativeConfidential = 1
+    };
+
     public class Helper
     {
 
@@ -26,5 +33,7 @@ namespace CamboCV.Entity
 
             return Convert.ToBase64String(byteHash);
         }
+
+        
     }
 }

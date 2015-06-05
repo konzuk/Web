@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using CamboCV.Entity.Table.OAuth;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CamboCV.Entity.Migrations
 {
@@ -17,6 +18,10 @@ namespace CamboCV.Entity.Migrations
             }
 
             context.Clients.AddRange(BuildClientsList());
+
+            context.Roles.Add(new IdentityRole("Admin"));
+            context.Roles.Add(new IdentityRole("User"));
+
             context.SaveChanges();
         }
 

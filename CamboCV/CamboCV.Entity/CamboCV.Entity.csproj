@@ -115,7 +115,6 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="DatabaseContext.cs" />
-    <Compile Include="Enums.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\ExternalLoginModels.cs" />

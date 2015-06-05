@@ -14,12 +14,9 @@ namespace CamboCV.Entity
         public DatabaseContext()
             : base("name = CamboCVDB")
         {
-
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DatabaseContext, Configuration>());
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DatabaseContext>());
+            
             Database.SetInitializer(new CustomDropCreateDatabaseIfModelChanges());
             this.Configuration.LazyLoadingEnabled = false;
-            //this.Configuration.AutoDetectChangesEnabled = true;
             this.Configuration.ProxyCreationEnabled = false;
         }
 
@@ -27,14 +24,12 @@ namespace CamboCV.Entity
         public DbSet<Client> Clients { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         
-     
+
+        
 
         protected override void OnModelCreating(DbModelBuilder tableBuilder)
         {
-
-           
-
-           
+            tableBuilder.Properties<string>().Configure(s=>s.IsUnicode(true));
             base.OnModelCreating(tableBuilder);
 
         }
