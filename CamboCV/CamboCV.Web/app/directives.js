@@ -8,6 +8,11 @@
     var footerHeight = '50px';
     var twfHeight = '100px';
 
+    var mainColor = '#3c8dbc';
+    var subColor = '#a9a9a9';
+    var backColor = '#425566';
+    var viewColor = '##a9a9a9';
+
 
       app.directive("translate", ["config",
 
@@ -38,7 +43,7 @@
                       
                       tm.set(element,
                           {
-                              backgroundColor: '#ff0000',
+                              backgroundColor: backColor,
                               position: 'fixed',
                               width: assideWidth,
                               height: 'calc(100% - ' + twfHeight + ')',
@@ -80,7 +85,7 @@
 
                         tm.set(element,
                             {
-                                backgroundColor: '#ffa500',
+                                backgroundColor: mainColor,
                                 position: 'fixed',
                                 width: '100%',
                                 height: topHeight,
@@ -106,7 +111,7 @@
 
                          tm.set(element,
                              {
-                                 backgroundColor: '#da70d6',
+                                 backgroundColor: viewColor,
                                  marginLeft: assideWidth,
                                  marginTop: topHeight,
                                  position: 'fixed',
@@ -136,7 +141,7 @@
 
                            tm.set(element,
                                {
-                                   backgroundColor: '#ffdd00',
+                                   backgroundColor: backColor,
                                    position: 'fixed',
                                    width: assideWidth,
                                    height: footerHeight,
@@ -210,7 +215,9 @@
                                  opacity: 0,
                                  position: 'fixed',
                                  right: '20px',
-                                 bottom:'20px'
+                                 bottom: '20px',
+                                 color: mainColor,
+
                              }
                          );
 
