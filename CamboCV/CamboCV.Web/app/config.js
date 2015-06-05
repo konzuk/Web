@@ -34,6 +34,7 @@
         {
             keyLang: 'km-KH',
             valuelang: 'ខ្មែរ',
+            iconlang: '',
             fontfamily: {
                 headerFont: "Khmer OS Muol Light",
                 itemFont: "Khmer OS Muol Light",
@@ -41,6 +42,7 @@
         }, {
             keyLang: 'en-US',
             valuelang: 'English',
+            iconlang: '',
             fontfamily: {
                 headerFont: "Buxton Sketch",
                 itemFont: "Buxton Sketch",

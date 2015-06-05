@@ -164,6 +164,7 @@
     <Content Include="App_Data\CamboCV_log.ldf">
       <DependentUpon>CamboCV.mdf</DependentUpon>
     </Content>
+    <Content Include="content\AdminLTE.css" />
     <Content Include="content\bootstrap-theme.css" />
     <Content Include="content\bootstrap-theme.min.css" />
     <Content Include="content\bootstrap.css" />

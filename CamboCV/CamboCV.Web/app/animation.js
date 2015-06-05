@@ -12,6 +12,8 @@
                 var cladddot = '.' + cladd;
 
                 element.addClass(cladd);
+
+               
                 
                 tm.killChildTweensOf(document.getElementById('shell'), true);
 
