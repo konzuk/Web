@@ -67,45 +67,45 @@
         }
 
         function logShowNotice(message) {
-            var notification = new NotificationFx({
-                message: '<span class="icon fa fa-3x fa-info-circle"></span><p>' + message + '</p>',
-                layout: 'growl',
-                effect: 'genie',
-                type: 'notice', // notice, warning or error
-                ttl: 2500,
-                onClose: function () {
+            //var notification = new NotificationFx({
+            //    message: '<span class="icon fa fa-3x fa-info-circle"></span><p>' + message + '</p>',
+            //    layout: 'growl',
+            //    effect: 'genie',
+            //    type: 'notice', // notice, warning or error
+            //    ttl: 2500,
+            //    onClose: function () {
                     
-                }
-            });
-            notification.show();
+            //    }
+            //});
+            //notification.show();
         }
 
         function logShowWarning(message) {
-            var notification = new NotificationFx({
-                message: '<span class="icon fa fa-2x fa-warning"></span><p>' + message + '</p>',
-                layout: 'growl',
-                effect: 'genie',
-                type: 'warning', // notice, warning or error
-                ttl: 2500,
-                onClose: function () {
+            //var notification = new NotificationFx({
+            //    message: '<span class="icon fa fa-2x fa-warning"></span><p>' + message + '</p>',
+            //    layout: 'growl',
+            //    effect: 'genie',
+            //    type: 'warning', // notice, warning or error
+            //    ttl: 2500,
+            //    onClose: function () {
 
-                }
-            });
-            notification.show();
+            //    }
+            //});
+            //notification.show();
         }
 
         function logShowError(message) {
-            var notification = new NotificationFx({
-                message: '<span class="icon fa fa-2x fa-times-circle"></span><p>' + message + '</p>',
-                layout: 'growl',
-                effect: 'genie',
-                type: 'error', // notice, warning or error
-                ttl: 2500,
-                onClose: function () {
+            //var notification = new NotificationFx({
+            //    message: '<span class="icon fa fa-2x fa-times-circle"></span><p>' + message + '</p>',
+            //    layout: 'growl',
+            //    effect: 'genie',
+            //    type: 'error', // notice, warning or error
+            //    ttl: 2500,
+            //    onClose: function () {
 
-                }
-            });
-            notification.show();
+            //    }
+            //});
+            //notification.show();
         }
     }
 })();

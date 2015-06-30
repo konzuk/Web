@@ -4,7 +4,7 @@
     var app = angular.module('app');
 
     var topHeight = '50px';
-    var assideWidth = '100px';
+    var assideWidth = '200px';
     var footerHeight = '50px';
     var twfHeight = '100px';
 
@@ -98,6 +98,40 @@
           }]);
 
 
+
+      app.directive("testAction", ["config",
+          function (config) {
+
+              var directive = {
+                  restrict: 'A',
+                  link: function ($scope, element, attr) {
+
+                      var tm = config.tm;
+
+                      tm.set(element,
+                          {
+                              color: textColorLight,
+                              backgroundColor: textColorDark,
+                              position: 'absolute',
+                              width: '100px',
+                              height: '100px'
+                              
+                          }
+                      );
+
+                      element.onmouseenter(function() {
+                          tm.to(element, 2, { left: '+=20px' });
+                      });
+                      element.onmouseleave(function() {
+                          tm.to(element, 2, { left: '-=20px' });
+                      });
+
+                  }
+              };
+              return directive;
+
+
+          }]);
      
 
 
@@ -265,6 +299,77 @@
 
          }]);
 
+
+      app.directive("kzButton", ["config",
+          function () {
+              var directive = {
+                  restrict: 'AE',
+
+                  scope: { ds: '=' },
+
+                  link: function ($scope, element, attr) {
+
+                      
+
+                      //element.dxDataGrid({
+                      //    dataSource: $scope.ds,
+                      //    paging: {
+                      //        pageSize: 10
+                      //    },
+                      //    loadPanel: false,
+                      //    searchPanel: {
+                      //        visible: true,
+                      //        width: 240,
+                      //        placeholder: 'Search...'
+                      //    },
+                      //    pager: {
+                      //        showPageSizeSelector: true,
+                      //        allowedPageSizes: [5, 10, 20]
+                      //    },
+                      //    columns: ['CompanyName', 'City', 'State', 'Phone', 'Fax'],
+
+                          //columns: [{
+                          //    dataField: "CompanyName",
+                          //    width: 130,
+                          //    caption: "CompanyName"
+                          //}, {
+                          //    dataField: 'OrderDate',
+                          //    alignment: 'right',
+                          //    dataType: 'date'
+                          //}, {
+                          //    dataField: "SaleAmount",
+                          //    alignment: 'right',
+                          //    format: "currency"
+                          //}, "Employee", {
+                          //    caption: "City",
+                          //    dataField: 'CustomerStoreCity'
+                          //}, {
+                          //    caption: "State",
+                          //    dataField: 'CustomerStoreState'
+                          //}
+                          //]
+
+
+
+                      //});
+
+                      
+
+                      element.dxButton({
+                          text: attr.text,
+                          type: attr.type,
+                          onClick: function () {
+                              alert('Button clicked');
+                          }
+                      });
+
+                  }
+              };
+
+              return directive;
+
+
+          }]);
       
 
 
