@@ -300,7 +300,7 @@
          }]);
 
 
-      app.directive("kzButton", ["config",
+      app.directive("myButton", ["config",
           function () {
               var directive = {
                   restrict: 'AE',
