@@ -8,40 +8,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-    <title translate="">{{title}}</title>
+    <title translate>{{title}}</title>
 
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
 
+
     <!--template-->
-    <link rel="stylesheet" type="text/css" href="content/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+   
     <link rel="stylesheet" type="text/css" href="content/jquery.mCustomScrollbar.css" />
-    <link rel="stylesheet" type="text/css" href="content/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="content/bootstrap-theme.css" />
-    <link rel="stylesheet" type="text/css" href="content/dx.common.css" />
-    <link rel="stylesheet" type="text/css" href="content/dx.light.css" />
 
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" type="text/css" href="content/css/font-awesome.min.css"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="content/angular-material.min.css"/>
 
     <link rel="stylesheet" type="text/css" href="style/ccv-custom.css" />
 
 
 
 
-    <script src="scripts/modernizr.custom.js"></script>
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
+
+    
 </head>
 <body>
 
-    <div ng-include="'/app/layout/shell.html'"></div>
+<div ng-include="'/app/layout/shell.html'" style="height: 100%"></div>
 
-    <!-- Vendor Scripts -->
-    <script src="scripts/jquery.min.js"></script>
+   
+
+<!-- Vendor Scripts -->
+    <script src="scripts/jquery-2.1.4.min.js"></script>
     <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-aria.min.js"></script>
     <script src="scripts/angular-animate.min.js"></script>
     <script src="scripts/angular-route.min.js"></script>
     <script src="scripts/angular-sanitize.min.js"></script>
@@ -52,18 +60,14 @@
     <script src="scripts/angular-translate-handler-log.min.js"></script>
     <script src="scripts/angular-translate-loader-partial.min.js"></script>
 
-    <script src="scripts/globalize.min.js"></script>
-    <script src="scripts/dx.all.js"></script>
 
-
+    
     <!--template-->
-    <script src="scripts/classie.js"></script>
-    <script src="scripts/TweenMax.js"></script>
+    <script src="scripts/TweenMax.min.js"></script>
     <script src="scripts/jquery.mousewheel.js"></script>
     <script src="scripts/jquery.mCustomScrollbar.js"></script>
 
-
-    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/angular-material.min.js"></script>
 
 
     <!-- Bootstrapping -->
@@ -86,6 +90,16 @@
     <script src="app/layout/shell.js"></script>
     <script src="app/module/home/home.js"></script>
     <script src="app/module/about/about.js"></script>
+    <script src="app/module/button/button.js"></script>
+    <script src="app/module/textbox/textbox.js"></script>
+    <script src="app/module/card/card.js"></script>
+    <script src="app/module/checkbox/checkbox.js"></script>
+    <script src="app/module/chips/chips.js"></script>
+    <script src="app/module/dialog/dialog.js"></script>
+    <script src="app/module/icons/icons.js"></script>
+    <script src="app/module/list/list.js"></script>
+    <script src="app/module/radio/radio.js"></script>
+    <script src="app/module/tab/tab.js"></script>
 
 
 
