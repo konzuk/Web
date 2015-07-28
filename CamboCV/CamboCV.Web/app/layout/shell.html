@@ -1,48 +1,55 @@
-﻿<div ng-controller="shell" the-shell>
+﻿
+<div id="shell" style="height: 100%" ng-controller="shell" ng-if="!isTranslating && !isFirstLoad" layout="row" layout-fill>
 
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
 
-    <div id="shell" class="ngAnimateOne" ng-if="!isTranslating && !isFirstLoad">
-
-
-        <header the-top>
-
-            <div style="cursor: pointer; display: inline" ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)">
-
-                {{lang.valuelang}}
-
-            </div>
-
-        </header>
-
-        <aside dir="rtl" the-slider>
-            <div dir="ltr">
-                <div>
-                    <ul>
-                        <li ng-repeat="nars in navBarLists" ng-class="{active : isActive(nars.href)}">
-                            <div style="cursor: pointer" ng-click="goto(nars.href)" translate="">
-                                {{ nars.text }}
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </aside>
-        <footer the-footer>
-            <strong class="theSliderFooter">
-                Copyright &copy; 2014-2015. <br />
-                All rights reserved.
-            </strong>
-        </footer>
-
-        <div the-view>
-            <div ng-view="" class="ngAnimateTwo" the-inner-view></div>
+        <div>
+            <ul>
+                <li ng-repeat="nars in navBarLists" ng-class="{active : isActive(nars.href)}">
+                    <div style="cursor: pointer" ng-click="goto(nars.href)" translate>
+                        {{ nars.text }}
+                    </div>
+                </li>
+            </ul>
         </div>
-
-       
-
-        <totop />
+    </md-sidenav>
 
 
+    <div layout="column" layout-fill>
+
+        <md-toolbar class="md-whiteframe-z2 md-accent" layout="row" layout-align="space-between center">
+
+
+            <section>
+
+                <md-button ng-repeat="lang in langList" ng-click="setLang(lang.keyLang)" ng-show="!isShowLang(lang.valuelang)" class="md-primary">{{lang.valuelang}}</md-button>
+
+            </section>
+
+
+            <section layout="row">
+
+                <md-input-container md-no-float>
+                    <label>Search</label>
+                    <input>
+                </md-input-container>
+                <md-button>
+                    <md-icon md-font-icon="fa-search" class="fa f24">
+                        
+                    </md-icon>
+                </md-button>
+
+
+
+
+            </section>
+
+
+        </md-toolbar>
+        <md-content class="ngAnimateOne" ng-view layout-padding flex>
+
+        </md-content>
     </div>
+
 
 </div>

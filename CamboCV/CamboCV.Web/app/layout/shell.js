@@ -21,13 +21,19 @@
         $scope.isTranslating = true;
         $scope.isFirstLoad = true;
 
+       
 
         $scope.langBind = '';
+        $scope.selectLang = '';
         $scope.isActive = function (route) {
             var path = "#" + $location.path();
             return path.indexOf(route) === 0;
         };
 
+
+        $scope.isShowLang = function (obj) {
+            return obj === $scope.selectLang;
+        };
 
        
         $rootScope.$on('$translateChangeStart', function () {
@@ -65,6 +71,7 @@
 
             if (result.length === 1) {
                 $scope.langBind = result[0].fontfamily.itemFont;
+                $scope.selectLang = result[0].valuelang;
             }
             spinner.spinnerTranslateHide();
             
