@@ -1,0 +1,17 @@
+{
+  "name": "CamboCV.Web",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "malihu-custom-scrollbar-plugin": "~3.0.9",
+    "angular-translate": "~2.7.2",
+    "angular-material": "~0.10.0"
+  }
+}
