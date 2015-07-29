@@ -1,0 +1,41 @@
+﻿
+
+<div class="section">
+
+    <div translate="">{{message}}</div>
+
+    <md-icon> face </md-icon>
+    <md-icon md-font-set="material-icons"> face </md-icon>
+    
+    <!-- The class '.material-icons' must be manually added if other styles are also specified-->
+    <md-icon class="material-icons md-light md-48"> face </md-icon>
+
+
+
+    <md-icon md-font-icon="fa-gear" class="fa f16"></md-icon>
+    <md-icon md-font-icon="fa-gear" class="fa f24"></md-icon>
+    <md-icon md-font-icon="fa-gear" class="fa f48"></md-icon>
+    <md-icon md-font-icon="fa-gear" class="fa f64"></md-icon>
+
+    <div id="test" layout="row">
+        <md-button class="md-fab">
+            <md-icon md-font-icon="fa-gear" class="fa f24"></md-icon>
+        </md-button>
+        <md-button class="md-fab"> 
+            <md-icon md-font-icon="fa-gear" class="fa f24"></md-icon>
+        </md-button>
+        <md-button class="md-fab">
+            <md-icon md-font-icon="fa-gear" class="fa f24"></md-icon>
+        </md-button>
+        <md-button class="md-fab">
+            <md-icon md-font-icon="fa-gear" class="fa f24"></md-icon>
+        </md-button>
+    </div>
+
+    <md-button class="md-primary md-raised" ng-click="layout('#test')">Animate</md-button>
+
+
+</div>
+
+
+

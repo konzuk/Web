@@ -1,0 +1,102 @@
+﻿
+
+<div translate="">{{message}}</div>
+
+
+<md-button class="md-primary" ng-click="buttonClicked()">Click me</md-button>
+<md-button class="md-accent">or maybe me</md-button>
+<md-button class="md-warn">Careful</md-button>
+
+
+<md-button class="md-primary">Click me</md-button>
+<md-button class="md-primary md-hue-1">Click me</md-button>
+<md-button class="md-primary md-hue-2">Click me</md-button>
+<md-button class="md-primary md-hue-3">Click me</md-button>
+
+
+<md-button class="md-accent">Click me</md-button>
+<md-button class="md-accent md-hue-1">Click me</md-button>
+<md-button class="md-accent md-hue-2">Click me</md-button>
+<md-button class="md-accent md-hue-3">Click me</md-button>
+
+<md-button class="md-warn">Click me</md-button>
+<md-button class="md-warn md-hue-1">Click me</md-button>
+<md-button class="md-warn md-hue-2">Click me</md-button>
+<md-button class="md-warn md-hue-3">Click me</md-button>
+
+
+<md-button class="md-primary md-raised md-cornered" ng-click="buttonClicked()">Click me</md-button>
+<md-button class="md-accent md-raised">or maybe me</md-button>
+<md-button class="md-warn md-raised">Careful</md-button>
+<md-button class="md-primary md-raised">Click me</md-button>
+<md-button class="md-primary md-raised md-hue-1">Click me</md-button>
+<md-button class="md-primary md-raised md-hue-2">Click me</md-button>
+<md-button class="md-primary md-raised md-hue-3">Click me</md-button>
+
+
+<md-button class="md-accent md-raised">Click me</md-button>
+<md-button class="md-accent md-raised md-hue-1">Click me</md-button>
+<md-button class="md-accent md-raised md-hue-2">Click me</md-button>
+<md-button class="md-accent md-raised md-hue-3">Click me</md-button>
+
+<md-button class="md-warn md-raised">Click me</md-button>
+<md-button class="md-warn md-raised md-hue-1">Click me</md-button>
+<md-button class="md-warn md-raised md-hue-2">Click me</md-button>
+<md-button class="md-warn md-raised md-hue-3">Click me</md-button>
+
+
+
+<div layout="row">
+    <div>I'm left.</div>
+    <div>I'm right.</div>
+</div>
+<div layout="column">
+    <div>I'm above.</div>
+    <div>I'm below.</div>
+</div>
+<div layout="row">
+    <div flex>
+        [flex]
+    </div>
+    <div flex>
+        [flex]
+    </div>
+    <div flex>
+        [flex]
+    </div>
+</div>
+
+<div>
+    <md-button ng-click="openBottomSheet()">
+        Open a Bottom Sheet!
+    </md-button>
+</div>
+
+<div>
+    <md-button ng-click="showAlert()" class="md-raised md-warn">
+        Employee Alert!
+    </md-button>
+</div>
+<div>
+    <md-button ng-click="showGreeting($event)" class="md-raised">
+        Greet Employee
+    </md-button>
+</div>
+<div>
+    <md-button ng-click="closeAlert()" ng-disabled="!hasAlert()" class="md-raised">
+        Close Alert
+    </md-button>
+</div>
+<div>
+    <md-button ng-click="showGreeting2($event)" class="md-raised md-primary">
+        Greet Employee
+    </md-button>
+</div>
+
+
+<div>
+    <md-button ng-click="openToast()">
+        Open a Toast!
+    </md-button>
+</div>
+
