@@ -6,7 +6,7 @@
 
     var controllerId = 'aboutCon';
     app.controller(controllerId,
-        ['$scope', 'common', about]);
+        ['$scope', '$mdBottomSheet', '$mdDialog', '$mdToast', 'common', about]);
 
 
     app.config(['$routeProvider',
@@ -31,7 +31,7 @@
     ]);
 
 
-    function about($scope, common) {
+    function about($scope, $mdBottomSheet, $mdDialog, $mdToast, common) {
 
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
@@ -41,6 +41,118 @@
             alert('Button clicked from Angular');
         };
 
+        $scope.openToast = function ($event) {
+            $mdToast.show($mdToast.simple().content('Hello!'));
+            // Could also do $mdToast.showSimple('Hello');
+        };
+
+        $scope.openBottomSheet = function () {
+            $mdBottomSheet.show({
+                template: '<md-bottom-sheet>Hello!</md-bottom-sheet>'
+            });
+        };
+
+        var alert;
+        $scope.showAlert = showConfirm;
+        $scope.closeAlert = closeAlert;
+        $scope.showGreeting = showCustomGreeting1;
+        $scope.showGreeting2 = showCustomGreeting2;
+        $scope.hasAlert = function() { return !!alert };
+        $scope.userName = $scope.userName || 'Bobby';
+        // Dialog #1 - Show simple alert dialog and cache
+        // reference to dialog instance
+        function showAlert() {
+            alert = $mdDialog.alert()
+              .title('Attention, ' + $scope.userName)
+              .content('This is an example of how easy dialogs can be!')
+              .ok('Close');
+            $mdDialog
+                .show( alert )
+                .finally(function() {
+                    alert = undefined;
+                });
+        }
+
+        function showConfirm() {
+            alert = $mdDialog.confirm()
+              .title('Attention, ' + $scope.userName)
+              .content('This is an example of how easy dialogs can be!')
+              
+            .cancel('Cancel').ok('OK');
+            $mdDialog
+                .show(alert)
+                .finally(function () {
+                    alert = undefined;
+                });
+        }
+        // Close the specified dialog instance and resolve with 'finished' flag
+        // Normally this is not needed, just use '$mdDialog.hide()' to close
+        // the most recent dialog popup.
+        function closeAlert() {
+            $mdDialog.hide( alert, "finished" );
+            alert = undefined;
+        }
+        // Dialog #2 - Demonstrate more complex dialogs construction and popup.
+        function showCustomGreeting1($event) {
+            $mdDialog.show({
+                targetEvent: $event,
+                template:
+                  '<md-dialog>' +
+                  '  <md-dialog-content>Hello {{ employee }}!</md-dialog-content>' +
+                  '  <div class="md-actions">' +
+                  '    <md-button ng-click="closeDialog()" class="md-primary">' +
+                  '      Close Greeting' +
+                  '    </md-button>' +
+                  '  </div>' +
+                  '</md-dialog>',
+                controller: function ($scope, $mdDialog, employee) {
+                    // Assigned from construction <code>locals</code> options...
+                    $scope.employee = employee;
+                    $scope.closeDialog = function () {
+                        // Easily hides most recent dialog shown...
+                        // no specific instance reference is needed.
+                        $mdDialog.hide();
+                    };
+                },
+                onComplete: afterShowAnimation,
+                locals: { employee: $scope.userName }
+            });
+            // When the 'enter' animation finishes...
+            function afterShowAnimation(scope, element, options) {
+                // post-show code here: DOM element focus, etc.
+            }
+        }
+        // Dialog #3 - Demonstrate use of ControllerAs and passing $scope to dialog
+        //             Here we used ng-controller="GreetingController as vm" and
+        //             $scope.vm === <controller instance="">
+        function showCustomGreeting2($event) {
+            $mdDialog.show({
+                clickOutsideToClose: true,
+                targetEvent: $event,
+                scope: $scope,        // use parent scope in template
+                preserveScope: true,  // do not forget this if use parent scope
+                // Since GreetingController is instantiated with ControllerAs syntax
+                // AND we are passing the parent '$scope' to the dialog, we MUST
+                // use 'vm.<xxx>' in the template markup
+                template: '<md-dialog>' +
+                          '  <md-dialog-content>' +
+                          '     Hi There {{employee}}' +
+                          '  </md-dialog-content>' +
+                          '</md-dialog>',
+                controller: function DialogController($scope, $mdDialog, employee) {
+                    $scope.employee = employee;
+                    $scope.closeDialog = function () {
+                        $mdDialog.hide();
+                    }
+                }
+                ,
+                locals: { employee: $scope.userName }
+            });
+        }
+
+
+       
+    
 
 
         //$scope.data =  [
