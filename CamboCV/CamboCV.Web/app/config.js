@@ -3,7 +3,7 @@
 
     var app = angular.module('app');
 
- 
+
     var keyCodes = {
         backspace: 8,
         tab: 9,
@@ -46,8 +46,8 @@
             fontfamily: {
                 headerFont: "Buxton Sketch",
                 itemFont: "Buxton Sketch",
-                }
             }
+        }
         ],
         preferredLocale: 'en-US'
     };
@@ -80,7 +80,7 @@
         }
     }]);
 
-    app.config(['$translateProvider','$provide', '$translatePartialLoaderProvider', function ($translateProvider,$provide, $translatePartialLoaderProvider) {
+    app.config(['$translateProvider', '$provide', '$translatePartialLoaderProvider', function ($translateProvider, $provide, $translatePartialLoaderProvider) {
 
 
         $translateProvider.useLoader('$translatePartialLoader', {
@@ -95,7 +95,7 @@
 
         // Tell the module to store the language in the Local
         $translateProvider.useCookieStorage();
-       
+
 
         // Tell the module to use a key 'lang' in the storage instead of default key
         $translateProvider.storageKey(config.langCookie);
@@ -103,9 +103,16 @@
     }]);
 
 
+    app.config(function ($mdThemingProvider, $mdIconProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('blue')
+            .accentPalette('pink')
+            .warnPalette('green')
+            .backgroundPalette('yellow');
 
-    
+        $mdIconProvider.fontSet('fa', 'fontawesome');
 
 
+    });
 
 })();

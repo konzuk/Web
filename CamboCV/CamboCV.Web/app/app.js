@@ -8,8 +8,12 @@
         'ngRoute',          // routing
         'ngSanitize',       // sanitizes html bindings (ex: sidebar.js)
         'ngCookies',        // Cookie
-        'pascalprecht.translate', //Translate
 
+        'ngMessages',
+        'ngMaterial',      
+       
+        'pascalprecht.translate', //Translate
+        
         //// Custom modules 
         'common'     // common functions, logger, spinner
         //'common.bootstrap', // bootstrap dialog wrapper functions

@@ -17,7 +17,7 @@
                 
                 tm.killChildTweensOf(document.getElementById('shell'), true);
 
-                tm.set(cladddot, { opacity: 0,position:'absolute',  left: '+=20px' });
+                tm.set(cladddot, { opacity: 0,  left: '+=20px' });
                
                 tm.to(cladddot, 1, {
                     left: '-=20px',
@@ -35,8 +35,6 @@
                 var cladddot = '.' + cladd;
 
                 element.addClass(cladd);
-
-                tm.set(cladddot, { position: 'absolute' });
 
 
                 tm.to(cladddot, 0.5, {
@@ -66,7 +64,7 @@
 
                 tm.killChildTweensOf(document.getElementById('shell'), true);
 
-                tm.set(cladddot, { opacity: 0, position: 'absolute' });
+                tm.set(cladddot, { opacity: 0});
 
                 //tm.to(cladddot, 0.1, { left: '+=20px', position: 'fixed' });
 
@@ -88,9 +86,7 @@
 
                 element.addClass(cladd);
 
-                tm.set(cladddot, { position: 'absolute' });
-
-
+               
                 tm.to(cladddot, 0.5, {
                     opacity: 0,
                     onComplete: function () {
